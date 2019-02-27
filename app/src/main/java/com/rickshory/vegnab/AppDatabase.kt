@@ -18,7 +18,7 @@ private const val TAG = "AppDatabase"
 private const val DATABASE_NAME = "VegNab.db"
 private const val DATABASE_VERSION = 3
 
-internal class AppDatabase constructor(context: Context ):
+internal class AppDatabase private constructor(context: Context ):
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     init {
@@ -62,5 +62,18 @@ internal class AppDatabase constructor(context: Context ):
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    companion object {
+        @Volatile
+        private var instance: AppDatabase? = null
+
+        fun getInstance(context: Context): AppDatabase =
+                instance ?: synchronized(this) {
+                    instance ?: AppDatabase(context).also {
+                        instance = it
+                    }
+                }
+
     }
 }
