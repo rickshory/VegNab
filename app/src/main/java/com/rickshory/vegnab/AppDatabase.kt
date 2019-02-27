@@ -64,16 +64,18 @@ internal class AppDatabase private constructor(context: Context ):
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    companion object {
-        @Volatile
-        private var instance: AppDatabase? = null
+    companion object : SingletonHolder<AppDatabase, Context>(::AppDatabase)
 
-        fun getInstance(context: Context): AppDatabase =
-                instance ?: synchronized(this) {
-                    instance ?: AppDatabase(context).also {
-                        instance = it
-                    }
-                }
-
-    }
+//    companion object {
+//        @Volatile
+//        private var instance: AppDatabase? = null
+//
+//        fun getInstance(context: Context): AppDatabase =
+//                instance ?: synchronized(this) {
+//                    instance ?: AppDatabase(context).also {
+//                        instance = it
+//                    }
+//                }
+//
+//    }
 }
