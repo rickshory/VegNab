@@ -4,6 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import java.lang.IllegalStateException
 
 /**
  * Created by Rick Shory 2019-02-25
@@ -61,7 +62,13 @@ internal class AppDatabase private constructor(context: Context ):
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG, "onUpgrade: starts")
+        when(newVersion) {
+            1 -> {
+                // upgrade to version 1
+            }
+            else -> throw IllegalStateException("onUpgrade with unknown newVersion: $newVersion")
+        }
     }
 
     companion object : SingletonHolder<AppDatabase, Context>(::AppDatabase)
