@@ -2,8 +2,10 @@ package com.rickshory.vegnab
 
 import android.content.ContentProvider
 import android.content.ContentValues
+import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
+import android.util.Log
 
 /**
  * Provider for the VegNab app
@@ -21,6 +23,14 @@ private const val VEGITEMS_ID = "122"
 val CONTENT_AUTHORITY_URI: Uri = Uri.parse("content://$CONTENT_AUTHORITY")
 
 class AppProvider: ContentProvider() {
+
+    private val uriMatcher by lazy { buildUriMatcher() }
+
+    private fun buildUriMatcher() : UriMatcher {
+        Log.d(TAG, "buildUriMatcher starts")
+        val matcher = UriMatcher(UriMatcher.NO_MATCH)
+        return matcher
+    }
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
