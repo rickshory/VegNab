@@ -13,7 +13,7 @@ import android.util.Log
  * This is the only class that knows about [AppDatabase]
  * */
 private const val TAG = "AppProvider"
-private val CONTENT_AUTHORITY = "com.rickshory.vegnab.provider"
+const val CONTENT_AUTHORITY = "com.rickshory.vegnab.provider"
 private const val PROJECTS = 100
 private const val PROJECTS_ID = 102
 private const val VISITS = 110
