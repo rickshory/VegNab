@@ -27,7 +27,7 @@ class AppProvider: ContentProvider() {
     private val uriMatcher by lazy { buildUriMatcher() }
 
     private fun buildUriMatcher() : UriMatcher {
-        Log.d(TAG, "buildUriMatcher starts")
+        Log.d(TAG, "buildUriMatcher: starts")
         val matcher = UriMatcher(UriMatcher.NO_MATCH)
 
         matcher.addURI(CONTENT_AUTHORITY, Contract_Projects.TABLE_NAME, PROJECTS)
@@ -43,7 +43,8 @@ class AppProvider: ContentProvider() {
     }
 
     override fun onCreate(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG, "onCreate: starts")
+        return true
     }
 
     override fun getType(uri: Uri): String? {
