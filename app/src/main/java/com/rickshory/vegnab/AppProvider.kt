@@ -4,6 +4,7 @@ import android.content.ContentProvider
 import android.content.ContentValues
 import android.content.UriMatcher
 import android.database.Cursor
+import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.util.Log
 
@@ -58,7 +59,26 @@ class AppProvider: ContentProvider() {
         selectionArgs: Array<String>?,
         sortOrder: String?
     ): Cursor? {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG, "query: called with uri $uri")
+        val match = uriMatcher.match(uri)
+        Log.d(TAG, "query: match = $match")
+        val queryBuilder = SQLiteQueryBuilder()
+        when (match) {
+            PROJECTS -> queryBuilder.tables = Contract_Projects.TABLE_NAME
+
+            PROJECTS_ID -> {
+                queryBuilder.tables = Contract_Projects.TABLE_NAME
+                val projectID = Contract_Projects.getID(uri)
+                queryBuilder.appendWhereEscapeString("${Contract_Projects.Columns.ID} = $projectID")
+            }
+
+            else -> throw IllegalArgumentException("Unknown URI: $uri")
+        }
+        val db = AppDatabase.getInstance(context).readableDatabase
+        val cursor = queryBuilder.query(db, projection, selection, selectionArgs, null, null, sortOrder)
+        Log.d(TAG, "query: rows in returned cursor = ${cursor.count}") // TODO remove this line
+
+        return cursor
     }
 
     override fun insert(uri: Uri, values: ContentValues): Uri? {
