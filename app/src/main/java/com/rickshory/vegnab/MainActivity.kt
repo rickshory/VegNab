@@ -1,6 +1,8 @@
 package com.rickshory.vegnab
 
+import android.content.ContentResolver
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
@@ -18,6 +20,37 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        val cursor = contentResolver.query(Contract_Projects.CONTENT_URI,
+            null,
+            null,
+            null,
+            null)
+        Log.d(TAG, "******************************************")
+        cursor.use {
+            while(it.moveToNext()) {
+                // Cycle through all records
+                with(it) {
+                    val id = getLong(0)
+                    val projcode = getString(1)
+                    val description = getString(2)
+                    val result = "ID: $id ProjectCode: $projcode Description: $description"
+                    Log.d(TAG, "onCreate: reading data [$result]")
+/*      const val ID = BaseColumns._ID
+        const val PROJECT_CODE = "ProjCode"
+        const val PROJECT_DESCRIPTION = "Description"
+        const val PROJECT_CONTEXT = "Context"
+        const val PROJECT_CAVEATS = "Caveats"
+        const val PROJECT_CONTACT_PERSON = "ContactPerson"
+        const val PROJECT_START_DATE = "StartDate"
+        const val PROJECT_END_DATE = "EndDate"
+        const val PROJECT_HIDE_ON_MOBILE = "HideOnMobile"
+        const val PROJECT_IS_DELETED = "IsDeleted"*/
+
+                }
+            }
+        }
+        Log.d(TAG, "******************************************")
 
 
 
