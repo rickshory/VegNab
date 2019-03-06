@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             Contract_Projects.Columns.PROJECT_CODE,
             Contract_Projects.Columns.PROJECT_DESCRIPTION)
         val sortOrder = Contract_Projects.Columns.PROJECT_START_DATE
-        val cursor = contentResolver.query(Contract_Projects.CONTENT_URI,
+        val cursor = contentResolver.query(Contract_Projects.buildUriFromId(1),
             projection,
             null,
             null,
