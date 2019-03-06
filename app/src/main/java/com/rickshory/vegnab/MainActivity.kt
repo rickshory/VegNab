@@ -21,11 +21,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        val projection = arrayOf(Contract_Projects.Columns.ID,
+            Contract_Projects.Columns.PROJECT_CODE,
+            Contract_Projects.Columns.PROJECT_DESCRIPTION)
+        val sortOrder = Contract_Projects.Columns.PROJECT_START_DATE
         val cursor = contentResolver.query(Contract_Projects.CONTENT_URI,
+            projection,
             null,
             null,
-            null,
-            null)
+            sortOrder)
         Log.d(TAG, "******************************************")
         cursor.use {
             while(it.moveToNext()) {
