@@ -69,7 +69,8 @@ class AppProvider: ContentProvider() {
             PROJECTS_ID -> {
                 queryBuilder.tables = Contract_Projects.TABLE_NAME
                 val projectID = Contract_Projects.getID(uri)
-                queryBuilder.appendWhereEscapeString("${Contract_Projects.Columns.ID} = $projectID")
+                queryBuilder.appendWhere("${Contract_Projects.Columns.ID} = ")
+                queryBuilder.appendWhereEscapeString("$projectID")
             }
 
             else -> throw IllegalArgumentException("Unknown URI: $uri")
