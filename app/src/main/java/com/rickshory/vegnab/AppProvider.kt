@@ -4,6 +4,7 @@ import android.content.ContentProvider
 import android.content.ContentValues
 import android.content.UriMatcher
 import android.database.Cursor
+import android.database.SQLException
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.util.Log
@@ -105,15 +106,25 @@ class AppProvider: ContentProvider() {
             PROJECTS -> {
                 val db = AppDatabase.getInstance(context).writableDatabase
                 recordID = db.insert(Contract_Projects.TABLE_NAME, null, values)
+                if (recordID != -1L) {
+                    returnUri = Contract_Projects.buildUriFromId(recordID)
+                } else {
+                    throw SQLException("Failed to insert. Uri was: $uri")
+                }
             }
 
             NAMERS -> {
                 val db = AppDatabase.getInstance(context).writableDatabase
                 recordID = db.insert(Contract_Namers.TABLE_NAME, null, values)
+                if (recordID != -1L) {
+                    returnUri = Contract_Namers.buildUriFromId(recordID)
+                } else {
+                    throw SQLException("Failed to insert. Uri was: $uri")
+                }
             }
             else -> throw IllegalArgumentException("Unknown URI: $uri")
         }
-
+        Log.d(TAG, "Exiting insert, returning Uri: $returnUri")
         return returnUri
     }
 
