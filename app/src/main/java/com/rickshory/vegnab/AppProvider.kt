@@ -94,7 +94,27 @@ class AppProvider: ContentProvider() {
     }
 
     override fun insert(uri: Uri, values: ContentValues): Uri? {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG, "insert: called with uri $uri")
+        val match = uriMatcher.match(uri)
+        Log.d(TAG, "query: match = $match")
+
+        val recordID: Long
+        val returnUri: Uri
+
+        when (match) {
+            PROJECTS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                recordID = db.insert(Contract_Projects.TABLE_NAME, null, values)
+            }
+
+            NAMERS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                recordID = db.insert(Contract_Namers.TABLE_NAME, null, values)
+            }
+            else -> throw IllegalArgumentException("Unknown URI: $uri")
+        }
+
+        return returnUri
     }
 
     override fun update(uri: Uri, values: ContentValues, selection: String?, selectionArgs: Array<String>?): Int {
