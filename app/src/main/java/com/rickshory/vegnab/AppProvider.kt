@@ -20,6 +20,8 @@ private const val VISITS = 110
 private const val VISITS_ID = 112
 private const val VEGITEMS = 120
 private const val VEGITEMS_ID = 122
+private const val NAMERS = 130
+private const val NAMERS_ID = 132
 
 val CONTENT_AUTHORITY_URI: Uri = Uri.parse("content://$CONTENT_AUTHORITY")
 
@@ -39,7 +41,8 @@ class AppProvider: ContentProvider() {
 //
 //        matcher.addURI(CONTENT_AUTHORITY, Contract_VegItems.TABLE_NAME, VEGITEMS)
 //        matcher.addURI(CONTENT_AUTHORITY, "${Contract_VegItems.TABLE_NAME}/#", VEGITEMS_ID)
-
+        matcher.addURI(CONTENT_AUTHORITY, Contract_Namers.TABLE_NAME, NAMERS)
+        matcher.addURI(CONTENT_AUTHORITY, "${Contract_Namers.TABLE_NAME}/#", NAMERS_ID)
         return matcher
     }
 
@@ -53,6 +56,9 @@ class AppProvider: ContentProvider() {
         return when (match) {
             PROJECTS -> Contract_Projects.CONTENT_TYPE
             PROJECTS_ID -> Contract_Projects.CONTENT_ITEM_TYPE
+
+            PROJECTS -> Contract_Namers.CONTENT_TYPE
+            PROJECTS_ID -> Contract_Namers.CONTENT_ITEM_TYPE
             else -> throw IllegalArgumentException("unknown uri: $uri")
         }
     }
