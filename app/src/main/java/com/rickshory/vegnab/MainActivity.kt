@@ -22,10 +22,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
 
         val projection = arrayOf(Contract_Namers.Columns.ID,
-            Contract_Namers.Columns.NAMERS_NAME)
+            Contract_Namers.Columns.NAMERS_NAME) // ignored
         val sortOrder = Contract_Namers.Columns.ID
-        val cursor = contentResolver.query(Contract_Namers.buildUriFromId(1),
-            projection,
+//        val cursor = contentResolver.query(Contract_Namers.buildUriFromId(1),
+        val cursor = contentResolver.query(Contract_Namers.CONTENT_URI,
+//            projection,
+            null,
             null,
             null,
             sortOrder)
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 with(it) {
                     val id = getLong(0)
                     val namer = getString(1)
-                    val result = "ID: $id Namer: $namer"
+                    val result = "ID: $id. Namer: $namer."
                     Log.d(TAG, "onCreate: reading data [$result]")
                 }
             }
