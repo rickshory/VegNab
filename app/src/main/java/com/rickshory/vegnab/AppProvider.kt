@@ -129,7 +129,40 @@ class AppProvider: ContentProvider() {
     }
 
     override fun update(uri: Uri, values: ContentValues, selection: String?, selectionArgs: Array<String>?): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG, "update: called with uri $uri")
+        val match = uriMatcher.match(uri)
+        Log.d(TAG, "query: match = $match")
+
+        var numRecsChanged: Int = 0
+        var selectionCriteria: String
+
+        when (match) {
+
+            PROJECTS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                numRecsChanged = db.update(Contract_Projects.TABLE_NAME, values, selection, selectionArgs)
+            }
+
+            PROJECTS_ID -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                val id = Contract_Projects.getID(uri)
+                selectionCriteria = "${Contract_Projects.Columns.ID}=$id"
+                if (selection != null && selection.isNotEmpty()) {
+                    selectionCriteria += " AND ($selection)"
+                }
+                
+                numRecsChanged = db.update(Contract_Projects.TABLE_NAME, values, selectionCriteria, selectionArgs)
+
+            }
+
+            NAMERS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+
+            }
+
+            else -> throw IllegalArgumentException("Unknown URI: $uri")
+        }
+        return numRecsChanged
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
