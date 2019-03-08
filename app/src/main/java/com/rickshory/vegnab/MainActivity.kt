@@ -21,11 +21,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        val projection = arrayOf(Contract_Projects.Columns.ID,
-            Contract_Projects.Columns.PROJECT_CODE,
-            Contract_Projects.Columns.PROJECT_DESCRIPTION)
-        val sortOrder = Contract_Projects.Columns.PROJECT_START_DATE
-        val cursor = contentResolver.query(Contract_Projects.buildUriFromId(1),
+        val projection = arrayOf(Contract_Namers.Columns.ID,
+            Contract_Namers.Columns.NAMERS_NAME)
+        val sortOrder = Contract_Namers.Columns.ID
+        val cursor = contentResolver.query(Contract_Namers.buildUriFromId(1),
             projection,
             null,
             null,
@@ -36,21 +35,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 // Cycle through all records
                 with(it) {
                     val id = getLong(0)
-                    val projcode = getString(1)
-                    val description = getString(2)
-                    val result = "ID: $id ProjectCode: $projcode Description: $description"
+                    val namer = getString(1)
+                    val result = "ID: $id Namer: $namer"
                     Log.d(TAG, "onCreate: reading data [$result]")
-/*      const val ID = BaseColumns._ID
-        const val PROJECT_CODE = "ProjCode"
-        const val PROJECT_DESCRIPTION = "Description"
-        const val PROJECT_CONTEXT = "Context"
-        const val PROJECT_CAVEATS = "Caveats"
-        const val PROJECT_CONTACT_PERSON = "ContactPerson"
-        const val PROJECT_START_DATE = "StartDate"
-        const val PROJECT_END_DATE = "EndDate"
-        const val PROJECT_HIDE_ON_MOBILE = "HideOnMobile"
-        const val PROJECT_IS_DELETED = "IsDeleted"*/
-
                 }
             }
         }
