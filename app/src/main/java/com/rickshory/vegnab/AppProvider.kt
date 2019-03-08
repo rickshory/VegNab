@@ -150,18 +150,26 @@ class AppProvider: ContentProvider() {
                 if (selection != null && selection.isNotEmpty()) {
                     selectionCriteria += " AND ($selection)"
                 }
-                
                 numRecsChanged = db.update(Contract_Projects.TABLE_NAME, values, selectionCriteria, selectionArgs)
-
             }
 
             NAMERS -> {
                 val db = AppDatabase.getInstance(context).writableDatabase
-
+                numRecsChanged = db.update(Contract_Namers.TABLE_NAME, values, selection, selectionArgs)
             }
 
+            NAMERS_ID -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                val id = Contract_Namers.getID(uri)
+                selectionCriteria = "${Contract_Namers.Columns.ID}=$id"
+                if (selection != null && selection.isNotEmpty()) {
+                    selectionCriteria += " AND ($selection)"
+                }
+                numRecsChanged = db.update(Contract_Namers.TABLE_NAME, values, selectionCriteria, selectionArgs)
+            }
             else -> throw IllegalArgumentException("Unknown URI: $uri")
         }
+        Log.d(TAG, "done with update: numRecsChanged = $numRecsChanged")
         return numRecsChanged
     }
 
