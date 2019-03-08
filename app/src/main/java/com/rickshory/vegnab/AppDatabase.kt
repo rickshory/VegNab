@@ -55,6 +55,12 @@ internal class AppDatabase private constructor(context: Context ):
         ${Contract_Projects.Columns.PROJECT_HIDE_ON_MOBILE} BOOL NOT NULL DEFAULT 0, -- reduce clutter on mobile device
         ${Contract_Projects.Columns.PROJECT_IS_DELETED} BOOL NOT NULL DEFAULT 0 -- don't allow user to actually delete a project, just flag it; need to keep for species Placeholders
         );
+        
+        CREATE TABLE ${Contract_Namers.TABLE_NAME} (
+        ${Contract_Namers.Columns.ID} INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+        ${Contract_Namers.Columns.NAMERS_NAME} VARCHAR(10) NOT NULL
+        CHECK (LENGTH(${Contract_Namers.Columns.NAMERS_NAME})>=2)
+        );
         """.replaceIndent(" ")
         Log.d(TAG, "sSQL: $sSQL")
         db.execSQL(sSQL)
