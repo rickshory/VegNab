@@ -1,6 +1,7 @@
 package com.rickshory.vegnab
 
 import android.content.ContentResolver
+import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        testInsert()
 
         val projection = arrayOf(Contract_Namers.Columns.ID,
             Contract_Namers.Columns.NAMERS_NAME) // ignored
@@ -59,6 +62,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+    }
+
+    private fun testInsert() {
+        val values = ContentValues().apply {
+            put(Contract_Namers.Columns.NAMERS_NAME, "Ada")
+        }
+        val uri = contentResolver.insert(Contract_Namers.CONTENT_URI, values)
+        Log.d(TAG, "New row id (in uri) is $uri")
+        Log.d(TAG, "id (in uri) = ${Contract_Namers.getID(uri)}")
     }
 
     override fun onBackPressed() {
