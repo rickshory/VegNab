@@ -97,7 +97,7 @@ class AppProvider: ContentProvider() {
     override fun insert(uri: Uri, values: ContentValues): Uri? {
         Log.d(TAG, "insert: called with uri $uri")
         val match = uriMatcher.match(uri)
-        Log.d(TAG, "query: match = $match")
+        Log.d(TAG, "insert: match = $match")
 
         val recordID: Long
         val returnUri: Uri
@@ -131,7 +131,7 @@ class AppProvider: ContentProvider() {
     override fun update(uri: Uri, values: ContentValues, selection: String?, selectionArgs: Array<String>?): Int {
         Log.d(TAG, "update: called with uri $uri")
         val match = uriMatcher.match(uri)
-        Log.d(TAG, "query: match = $match")
+        Log.d(TAG, "update: match = $match")
 
         var count: Int
         var selectionCriteria: String
@@ -174,7 +174,48 @@ class AppProvider: ContentProvider() {
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG, "delete: called with uri $uri")
+        val match = uriMatcher.match(uri)
+        Log.d(TAG, "delete: match = $match")
+
+        var count: Int
+        var selectionCriteria: String
+
+        when (match) {
+
+            PROJECTS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                count = db.delete(Contract_Projects.TABLE_NAME, selection, selectionArgs)
+            }
+
+            PROJECTS_ID -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                val id = Contract_Projects.getID(uri)
+                selectionCriteria = "${Contract_Projects.Columns.ID}=$id"
+                if (selection != null && selection.isNotEmpty()) {
+                    selectionCriteria += " AND ($selection)"
+                }
+                count = db.delete(Contract_Projects.TABLE_NAME, selectionCriteria, selectionArgs)
+            }
+
+            NAMERS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                count = db.delete(Contract_Namers.TABLE_NAME, selection, selectionArgs)
+            }
+
+            NAMERS_ID -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                val id = Contract_Namers.getID(uri)
+                selectionCriteria = "${Contract_Namers.Columns.ID}=$id"
+                if (selection != null && selection.isNotEmpty()) {
+                    selectionCriteria += " AND ($selection)"
+                }
+                count = db.delete(Contract_Namers.TABLE_NAME, selectionCriteria, selectionArgs)
+            }
+            else -> throw IllegalArgumentException("Unknown URI: $uri")
+        }
+        Log.d(TAG, "done with delete: count = $count")
+        return count
     }
 
 }
