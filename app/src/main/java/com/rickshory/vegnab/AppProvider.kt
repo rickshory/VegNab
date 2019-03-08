@@ -133,14 +133,14 @@ class AppProvider: ContentProvider() {
         val match = uriMatcher.match(uri)
         Log.d(TAG, "query: match = $match")
 
-        var numRecsChanged: Int = 0
+        var count: Int
         var selectionCriteria: String
 
         when (match) {
 
             PROJECTS -> {
                 val db = AppDatabase.getInstance(context).writableDatabase
-                numRecsChanged = db.update(Contract_Projects.TABLE_NAME, values, selection, selectionArgs)
+                count = db.update(Contract_Projects.TABLE_NAME, values, selection, selectionArgs)
             }
 
             PROJECTS_ID -> {
@@ -150,12 +150,12 @@ class AppProvider: ContentProvider() {
                 if (selection != null && selection.isNotEmpty()) {
                     selectionCriteria += " AND ($selection)"
                 }
-                numRecsChanged = db.update(Contract_Projects.TABLE_NAME, values, selectionCriteria, selectionArgs)
+                count = db.update(Contract_Projects.TABLE_NAME, values, selectionCriteria, selectionArgs)
             }
 
             NAMERS -> {
                 val db = AppDatabase.getInstance(context).writableDatabase
-                numRecsChanged = db.update(Contract_Namers.TABLE_NAME, values, selection, selectionArgs)
+                count = db.update(Contract_Namers.TABLE_NAME, values, selection, selectionArgs)
             }
 
             NAMERS_ID -> {
@@ -165,12 +165,12 @@ class AppProvider: ContentProvider() {
                 if (selection != null && selection.isNotEmpty()) {
                     selectionCriteria += " AND ($selection)"
                 }
-                numRecsChanged = db.update(Contract_Namers.TABLE_NAME, values, selectionCriteria, selectionArgs)
+                count = db.update(Contract_Namers.TABLE_NAME, values, selectionCriteria, selectionArgs)
             }
             else -> throw IllegalArgumentException("Unknown URI: $uri")
         }
-        Log.d(TAG, "done with update: numRecsChanged = $numRecsChanged")
-        return numRecsChanged
+        Log.d(TAG, "done with update: count = $count")
+        return count
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
