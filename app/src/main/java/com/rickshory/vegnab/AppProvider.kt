@@ -58,8 +58,8 @@ class AppProvider: ContentProvider() {
             PROJECTS -> Contract_Projects.CONTENT_TYPE
             PROJECTS_ID -> Contract_Projects.CONTENT_ITEM_TYPE
 
-            PROJECTS -> Contract_Namers.CONTENT_TYPE
-            PROJECTS_ID -> Contract_Namers.CONTENT_ITEM_TYPE
+            NAMERS -> Contract_Namers.CONTENT_TYPE
+            NAMERS_ID -> Contract_Namers.CONTENT_ITEM_TYPE
             else -> throw IllegalArgumentException("unknown uri: $uri")
         }
     }
@@ -80,11 +80,19 @@ class AppProvider: ContentProvider() {
 
             PROJECTS_ID -> {
                 queryBuilder.tables = Contract_Projects.TABLE_NAME
-                val projectID = Contract_Projects.getID(uri)
+                val id = Contract_Projects.getID(uri)
                 queryBuilder.appendWhere("${Contract_Projects.Columns.ID} = ")
-                queryBuilder.appendWhereEscapeString("$projectID")
+                queryBuilder.appendWhereEscapeString("$id")
             }
 
+            NAMERS -> queryBuilder.tables = Contract_Namers.TABLE_NAME
+
+            NAMERS_ID -> {
+                queryBuilder.tables = Contract_Namers.TABLE_NAME
+                val id = Contract_Namers.getID(uri)
+                queryBuilder.appendWhere("${Contract_Namers.Columns.ID} = ")
+                queryBuilder.appendWhereEscapeString("$id")
+            }
             else -> throw IllegalArgumentException("Unknown URI: $uri")
         }
         val db = AppDatabase.getInstance(context).readableDatabase
