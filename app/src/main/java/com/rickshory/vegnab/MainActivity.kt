@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
 
         testInsert()
+        testUpdate()
 
         val projection = arrayOf(Contract_Namers.Columns.ID,
             Contract_Namers.Columns.NAMERS_NAME) // ignored
@@ -64,9 +65,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
     }
 
+    private fun testUpdate() {
+        val values = ContentValues().apply {
+            put(Contract_Namers.Columns.NAMERS_NAME, "Phil Burgeon")
+        }
+        val taskUri = Contract_Namers.buildUriFromId(3)
+        val numRowsChanged = contentResolver.update(taskUri, values, null, null)
+        Log.d(TAG, "Number of records changed = $numRowsChanged")
+    }
+
     private fun testInsert() {
         val values = ContentValues().apply {
-            put(Contract_Namers.Columns.NAMERS_NAME, "Ada")
+            put(Contract_Namers.Columns.NAMERS_NAME, "Bill Dingon")
         }
         val uri = contentResolver.insert(Contract_Namers.CONTENT_URI, values)
         Log.d(TAG, "New row id (in uri) is $uri")
