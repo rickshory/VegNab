@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
 
         // insert a row, and rename the previous one
-        testUpdateRow((testInsert("Buddy")-1), "Sam")
+//        testUpdateRow((testInsert("Buddy")-1), "Sam")
+        testRename("Buddy", "Colin")
 
         val projection = arrayOf(Contract_Namers.Columns.ID,
             Contract_Namers.Columns.NAMERS_NAME) // ignored
@@ -63,6 +64,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+    }
+
+    private fun testRename(oldName: String, newName: String): Int {
+        val values = ContentValues().apply {
+            put(Contract_Namers.Columns.NAMERS_NAME, newName)
+        }
+        // following is not safe and of course will break if oldName contains an apostrophe
+        val selection = Contract_Namers.Columns.NAMERS_NAME + " = '$oldName'"
+        val taskUri = Contract_Namers.CONTENT_URI
+        val numRowsChanged = contentResolver.update(taskUri, values, selection, null)
+        Log.d(TAG, "Number of records changed = $numRowsChanged")
+        return numRowsChanged
     }
 
     private fun testUpdateRow(rowId: Long, newName: String) {
