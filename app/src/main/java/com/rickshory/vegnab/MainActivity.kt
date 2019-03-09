@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // insert a row, and rename the previous one
 //        testUpdateRow((testInsert("Buddy")-1), "Sam")
-        testRename("Buddy", "Colin")
+        testRename("Sam", "Steve")
 
         val projection = arrayOf(Contract_Namers.Columns.ID,
             Contract_Namers.Columns.NAMERS_NAME) // ignored
@@ -70,10 +70,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val values = ContentValues().apply {
             put(Contract_Namers.Columns.NAMERS_NAME, newName)
         }
-        // following is not safe and of course will break if oldName contains an apostrophe
-        val selection = Contract_Namers.Columns.NAMERS_NAME + " = '$oldName'"
+
+        val selection = Contract_Namers.Columns.NAMERS_NAME + " = ?"
+        val selectionArgs = arrayOf(oldName)
         val taskUri = Contract_Namers.CONTENT_URI
-        val numRowsChanged = contentResolver.update(taskUri, values, selection, null)
+        val numRowsChanged = contentResolver.update(taskUri, values, selection, selectionArgs)
         Log.d(TAG, "Number of records changed = $numRowsChanged")
         return numRowsChanged
     }
