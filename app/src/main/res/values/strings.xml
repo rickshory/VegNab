@@ -1,9 +1,26 @@
 <resources>
     <string name="app_name">VegNab</string>
+    <string name="empty_string"></string>
+    <string name="under_construction">Not implemented yet</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="menutitle_edit_proj">Edit Project</string>
+    <string name="menutitle_new_proj">New Project</string>
+    <string name="menutitle_del_proj">Delete Project</string>
+    <string name="menutitle_new_plottype">New Plot Type</string>
+    <string name="menutitle_export_db">Export Database</string>
+    <string name="menutitle_app_info">App info</string>
+    <string name="menutitle_legal_notices">Legal Notices</string>
+    <string name="menutitle_hide_visit">Hide Visit</string>
+    <string name="menutitle_unhide_visits">Un-hide Visits</string>
+    <string name="menutitle_visit_info">Visit details</string>
+    <string name="menutitle_delete_visit">Delete Visit</string>
+    <string name="menutitle_export_visit">Export Visit</string>
+    <string name="menutitle_unhide_visit">Un-hide Visit</string>
+    <string name="menutitle_delete_namer">Delete Namer</string>
+    <string name="menutitle_donate">Donate</string>
 </resources>
