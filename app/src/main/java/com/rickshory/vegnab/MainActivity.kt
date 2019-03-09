@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // insert a row, and rename the previous one
 //        testUpdateRow((testInsert("Buddy")-1), "Sam")
         testRename("Sam", "Steve")
+        testCutName("Colin")
 
         val projection = arrayOf(Contract_Namers.Columns.ID,
             Contract_Namers.Columns.NAMERS_NAME) // ignored
@@ -64,6 +65,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+    }
+
+    private fun testCutName(badName: String): Int {
+        val selection = Contract_Namers.Columns.NAMERS_NAME + " = ?"
+        val selectionArgs = arrayOf(badName)
+        val taskUri = Contract_Namers.CONTENT_URI
+        val numRowsChanged = contentResolver.delete(taskUri, selection, selectionArgs)
+        Log.d(TAG, "Number of records cut = $numRowsChanged")
+        return numRowsChanged
     }
 
     private fun testRename(oldName: String, newName: String): Int {
