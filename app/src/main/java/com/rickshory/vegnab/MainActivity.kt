@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        testInsert()
-        testUpdate()
+        // insert a row, and rename the previous one
+        testUpdateRow((testInsert("Buddy")-1), "Sam")
 
         val projection = arrayOf(Contract_Namers.Columns.ID,
             Contract_Namers.Columns.NAMERS_NAME) // ignored
@@ -65,22 +65,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
     }
 
-    private fun testUpdate() {
+    private fun testUpdateRow(rowId: Long, newName: String) {
         val values = ContentValues().apply {
-            put(Contract_Namers.Columns.NAMERS_NAME, "Phil Burgeon")
+            put(Contract_Namers.Columns.NAMERS_NAME, newName)
         }
-        val taskUri = Contract_Namers.buildUriFromId(3)
+        val taskUri = Contract_Namers.buildUriFromId(rowId)
         val numRowsChanged = contentResolver.update(taskUri, values, null, null)
         Log.d(TAG, "Number of records changed = $numRowsChanged")
     }
 
-    private fun testInsert() {
+    private fun testInsert(nameToAdd: String): Long {
         val values = ContentValues().apply {
-            put(Contract_Namers.Columns.NAMERS_NAME, "Bill Dingon")
+            put(Contract_Namers.Columns.NAMERS_NAME, nameToAdd)
         }
         val uri = contentResolver.insert(Contract_Namers.CONTENT_URI, values)
         Log.d(TAG, "New row id (in uri) is $uri")
-        Log.d(TAG, "id (in uri) = ${Contract_Namers.getID(uri)}")
+        val newRecId = Contract_Namers.getID(uri)
+        Log.d(TAG, "id (in uri) = $newRecId}")
+        return newRecId
     }
 
     override fun onBackPressed() {
