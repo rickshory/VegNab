@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:title="@string/menu_main_title_export_db" android:id="@+id/main_export_db"
+    <item android:title="@string/menu_main_title_export_db" android:id="@+id/main_action_export_db"
           android:orderInCategory="300"
           app:showAsAction="never" android:icon="@android:drawable/ic_menu_send"/>
-    <item android:id="@+id/main_settings"
+    <item android:id="@+id/main_action_settings"
           android:title="@string/menu_main_title_settings"
           android:orderInCategory="310"
           app:showAsAction="never" android:icon="@android:drawable/ic_menu_manage"/>
     <item android:title="@string/menu_main_title_about" android:orderInCategory="320" android:id="@+id/main_about"
           app:showAsAction="never" android:icon="@android:drawable/ic_menu_info_details"/>
 
-    <item android:id="@+id/main_help"
+    <item android:id="@+id/main_action_help"
           android:title="@string/menu_main_title_help"
           android:orderInCategory="320"
           app:showAsAction="never" android:icon="@android:drawable/ic_menu_help"/>
 
-    <item android:id="@+id/main_donate"
+    <item android:id="@+id/main_action_donate"
           android:title="@string/menu_main_title_donate"
           android:orderInCategory="330"
-          app:showAsAction="never""/>
+          app:showAsAction="never"/>
 
-    <item android:id="@+id/main_legal"
+    <item android:id="@+id/main_action_legal"
           android:title="@string/menu_main_title_legal"
           android:orderInCategory="340"
-          app:showAsAction="never""/>
+          app:showAsAction="never"/>
 </menu>

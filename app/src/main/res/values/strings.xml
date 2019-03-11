@@ -14,16 +14,16 @@
     <string name="menu_main_title_donate">Donate</string>
     <string name="menu_main_title_legal">Legal Notices</string>
 
-
-    <string name="menutitle_edit_proj">Edit Project</string>
-    <string name="menutitle_new_proj">New Project</string>
-    <string name="menutitle_del_proj">Delete Project</string>
-    <string name="menutitle_new_plottype">New Plot Type</string>
+    <string name="menu_visits_title_edit_proj">Edit Project</string>
+    <string name="menu_visits_title_new_proj">New Project</string>
+    <string name="menu_visits_title_del_proj">Delete Project</string>
+    <string name="menu_visits_title_new_plottype">New Plot Type</string>
+    <string name="menu_visits_title_unhide_visits">Un-hide Visits</string>
 
     <string name="menutitle_app_info">App info</string>
     <string name="menutitle_legal_notices">Legal Notices</string>
     <string name="menutitle_hide_visit">Hide Visit</string>
-    <string name="menutitle_unhide_visits">Un-hide Visits</string>
+
     <string name="menutitle_visit_info">Visit details</string>
     <string name="menutitle_delete_visit">Delete Visit</string>
     <string name="menutitle_export_visit">Export Visit</string>
