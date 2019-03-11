@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/menutitle_edit_proj" android:id="@+id/action_edit_proj" android:orderInCategory="100"
+          app:showAsAction="never" android:icon="@android:drawable/ic_menu_edit"/>
+    <item android:title="@string/menutitle_new_proj" android:id="@+id/action_new_proj"
+          android:icon="@android:drawable/ic_menu_add" app:showAsAction="never" android:orderInCategory="110"/>
+    <item android:title="@string/menutitle_del_proj" android:id="@+id/action_delete_proj"
+          android:icon="@android:drawable/ic_menu_delete" android:orderInCategory="120" app:showAsAction="never"/>
+    <item android:title="@string/menutitle_new_plottype" android:id="@+id/action_new_plottype"
+          android:icon="@android:drawable/ic_menu_add" android:orderInCategory="130" app:showAsAction="never"/>
+    <item android:title="@string/menutitle_export_db" android:id="@+id/action_export_db" android:orderInCategory="140"
+          app:showAsAction="never" android:icon="@android:drawable/ic_menu_send"/>
+    <item android:title="@string/menutitle_unhide_visits" android:id="@+id/action_unhide_visits"
+          android:orderInCategory="150" android:icon="@android:drawable/ic_menu_search" app:showAsAction="never"/>
+          app:showAsAction="never"/>
+</menu>
