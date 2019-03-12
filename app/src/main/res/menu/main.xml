@@ -1,28 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:title="@string/menu_main_title_export_db" android:id="@+id/main_action_export_db"
-          android:orderInCategory="300"
-          app:showAsAction="never" android:icon="@android:drawable/ic_menu_send"/>
-    <item android:id="@+id/main_action_settings"
-          android:title="@string/menu_main_title_settings"
-          android:orderInCategory="310"
-          app:showAsAction="never" android:icon="@android:drawable/ic_menu_manage"/>
-    <item android:title="@string/menu_main_title_about" android:orderInCategory="320" android:id="@+id/main_about"
-          app:showAsAction="never" android:icon="@android:drawable/ic_menu_info_details"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/main_action_export_db"
+        android:icon="@android:drawable/ic_menu_send"
+        android:orderInCategory="300"
+        android:title="@string/menu_main_title_export_db"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/main_action_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:orderInCategory="310"
+        android:title="@string/menu_main_title_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/main_about"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:orderInCategory="320"
+        android:title="@string/menu_main_title_about"
+        app:showAsAction="never" />
 
-    <item android:id="@+id/main_action_help"
-          android:title="@string/menu_main_title_help"
-          android:orderInCategory="320"
-          app:showAsAction="never" android:icon="@android:drawable/ic_menu_help"/>
+    <item
+        android:id="@+id/main_action_help"
+        android:icon="@android:drawable/ic_menu_help"
+        android:orderInCategory="320"
+        android:title="@string/menu_main_title_help"
+        app:showAsAction="never" />
 
-    <item android:id="@+id/main_action_donate"
-          android:title="@string/menu_main_title_donate"
-          android:orderInCategory="330"
-          app:showAsAction="never"/>
+    <item
+        android:id="@+id/main_action_donate"
+        android:orderInCategory="330"
+        android:title="@string/menu_main_title_donate"
+        app:showAsAction="never" />
 
-    <item android:id="@+id/main_action_legal"
-          android:title="@string/menu_main_title_legal"
-          android:orderInCategory="340"
-          app:showAsAction="never"/>
+    <item
+        android:id="@+id/main_action_legal"
+        android:orderInCategory="340"
+        android:title="@string/menu_main_title_legal"
+        app:showAsAction="never" />
 </menu>
