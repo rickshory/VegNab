@@ -30,4 +30,5 @@
     <string name="menutitle_unhide_visit">Un-hide Visit</string>
     <string name="menutitle_delete_namer">Delete Namer</string>
     <string name="menutitle_donate">Donate</string>
+    <string name="visits_msg_start_new">Start a new visit</string>
 </resources>

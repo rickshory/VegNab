@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // insert a row, and rename the previous one
 //        testUpdateRow((testInsert("Buddy")-1), "Sam")
-        testRename("Sam", "Steve")
-        testCutName("Colin")
+//        testRename("Sam", "Steve")
+//        testCutName("Colin")
 
         val projection = arrayOf(Contract_Namers.Columns.ID,
             Contract_Namers.Columns.NAMERS_NAME) // ignored
