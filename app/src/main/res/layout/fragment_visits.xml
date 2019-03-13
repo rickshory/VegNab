@@ -14,9 +14,13 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
+        android:contentDescription="@string/visits_msg_start_new"
         android:text="@string/visits_msg_start_new"
+        android:textColor="@android:color/tertiary_text_dark"
+        android:textSize="24dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Start a new visit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
