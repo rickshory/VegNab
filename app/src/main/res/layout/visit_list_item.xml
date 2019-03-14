@@ -28,17 +28,20 @@
         android:id="@+id/vli_export"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:contentDescription="@string/vli_export_visit"
-        app:srcCompat="@android:drawable/ic_menu_upload"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="253dp" />
+        app:layout_constraintEnd_toStartOf="@+id/vli_hide_visit"
+        app:layout_constraintTop_toTopOf="@+id/vli_hide_visit"
+        app:srcCompat="@android:drawable/ic_menu_upload" />
 
     <ImageButton
         android:id="@+id/vli_hide_visit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:contentDescription="@string/vli_hide_visit"
-        app:srcCompat="@android:drawable/ic_menu_delete"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="253dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 </androidx.constraintlayout.widget.ConstraintLayout>
