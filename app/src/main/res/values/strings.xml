@@ -31,4 +31,6 @@
     <string name="menutitle_delete_namer">Delete Namer</string>
     <string name="menutitle_donate">Donate</string>
     <string name="visits_msg_start_new">Start a new visit</string>
+    <string name="vli_export_visit">Export this visit\'s data</string>
+    <string name="vli_hide_visit">Hide this visit</string>
 </resources>
