@@ -36,4 +36,8 @@
     <string name="vae_txt_title">Visit Header Information</string>
     <string name="vae_txt_name">Memorable short name for this Visit, up to 16 characters</string>
     <string name="vae_hint_name">Visit Name</string>
+    <string name="vae_txt_notes">Notes</string>
+    <string name="vae_hint_notes">Description and/or notes</string>
+    <string name="vae_txt_location">Reference locaton. Long-press for options.</string>
+    <string name="vae_hint_location">Location</string>
 </resources>
