@@ -36,7 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/vae_hint_name"
@@ -44,11 +44,12 @@
         android:maxLength="16"
         android:selectAllOnFocus="false"
         android:singleLine="true"
-        android:text="Name"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vae_tv_lbl_name" />
+        app:layout_constraintTop_toBottomOf="@+id/vae_tv_lbl_name"
+        tools:text="sitecode000" />
 
     <TextView
         android:id="@+id/vae_tv_lbl_notes"
@@ -68,16 +69,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/vae_hint_notes"
         android:inputType="textMultiLine|text"
-        android:text="Name"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vae_tv_lbl_notes" />
+        app:layout_constraintTop_toBottomOf="@+id/vae_tv_lbl_notes"
+        tools:text="Place in the sun" />
 
     <TextView
         android:id="@+id/vae_tv_lbl_location"
@@ -97,7 +98,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/vae_hint_location"
@@ -105,4 +106,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vae_tv_lbl_location" />
+
+    <TextView
+        android:id="@+id/vae_tv_lbl_spp_nsmer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vae_inp_location" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vae_tv_lbl_spp_nsmer" />
 </androidx.constraintlayout.widget.ConstraintLayout>
