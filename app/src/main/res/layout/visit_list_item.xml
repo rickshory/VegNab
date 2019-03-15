@@ -6,22 +6,30 @@
 
     <TextView
         android:id="@+id/vli_code"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:textAlignment="viewStart"
         android:textColor="@color/design_default_color_primary"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="122dp"
+        app:layout_constraintEnd_toStartOf="@+id/vli_export"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="plotcode000" />
 
     <TextView
         android:id="@+id/vli_date_notes"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:textAlignment="viewStart"
         android:textColor="@color/design_default_color_secondary"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="195dp"
+        app:layout_constraintEnd_toStartOf="@+id/vli_export"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vli_code"
         tools:text="2019-02-23, Place in the sun" />
 
     <ImageButton
