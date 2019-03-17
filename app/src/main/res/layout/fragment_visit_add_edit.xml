@@ -113,15 +113,19 @@
         tools:text="45.55, -122.64\naccuracy 6.617m" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/visit_go_fab"
+        android:id="@+id/visit_go_sbpt_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:elevation="6dp"
+        android:foregroundGravity="right|bottom"
+        app:borderWidth="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:pressedTranslationZ="12dp"
         app:srcCompat="@android:drawable/ic_media_play" />
-    
+
 </androidx.constraintlayout.widget.ConstraintLayout>
