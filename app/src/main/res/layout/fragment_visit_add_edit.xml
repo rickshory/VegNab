@@ -76,6 +76,7 @@
         android:hint="@string/vae_hint_notes"
         android:importantForAutofill="no"
         android:inputType="textMultiLine|text"
+        android:maxLength="255"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,5 +112,16 @@
         app:layout_constraintTop_toBottomOf="@+id/vae_tv_lbl_location"
         tools:text="45.55, -122.64\naccuracy 6.617m" />
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/visit_go_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_media_play" />
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
