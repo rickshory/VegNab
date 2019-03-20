@@ -32,7 +32,7 @@ class FragmentVisitAddEdit : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            param1 = it.getString(ARG_VISIT)
             param2 = it.getString(ARG_PARAM2)
         }
     }
@@ -94,7 +94,7 @@ class FragmentVisitAddEdit : Fragment() {
         fun newInstance(param1: String, param2: String) =
             FragmentVisitAddEdit().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
+                    putString(ARG_VISIT, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
