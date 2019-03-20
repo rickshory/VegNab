@@ -24,17 +24,17 @@ private const val ARG_VISIT = "visit"
  *
  */
 class FragmentVisitAddEdit : Fragment() {
-    // TODO: Rename and change types of parameters
     private var visit: Visit? = null
 //    private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            visit = it.getString(ARG_VISIT)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        visit = arguments?.getParcelable(ARG_VISIT)
+//        arguments?.let {
+//            visit = it.getString(ARG_VISIT)
+//            param2 = it.getString(ARG_PARAM2)
+//        }
     }
 
     override fun onCreateView(
