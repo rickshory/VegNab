@@ -30,7 +30,7 @@ class FragmentVisitAddEdit : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        visit = arguments?.getParcelable<Visit>(ARG_VISIT)
+        visit = arguments?.getParcelable(ARG_VISIT)
 //        arguments?.let {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
