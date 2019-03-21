@@ -103,9 +103,5 @@ class FragmentVisitAddEdit : Fragment() {
 }
 
 fun createFrag(visit: Visit) {
-    val fragment = FragmentVisitAddEdit().apply {
-        arguments = Bundle().apply {
-            putParcelable(ARG_VISIT, visit)
-        }
-    }
+    val fragment = FragmentVisitAddEdit.newInstance(visit)
 }
