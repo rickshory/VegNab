@@ -77,7 +77,8 @@ class FragmentVisitAddEdit : Fragment() {
      */
     interface OnGoClicked {
         // TODO: Update argument type and name
-        fun onGoClicked(uri: Uri)
+//        fun onGoClicked(uri: Uri)
+        fun onGoClicked()
     }
 
     companion object {
