@@ -3,12 +3,13 @@ package com.rickshory.vegnab
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-
+private const val TAG = "FragmentVisitAddEdit"
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_VISIT = "visit"
 //private const val ARG_PARAM1 = "param1"
@@ -29,6 +30,7 @@ class FragmentVisitAddEdit : Fragment() {
     private var listener: OnGoClicked? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d(TAG, "onCreate: starts")
         super.onCreate(savedInstanceState)
         visit = arguments?.getParcelable(ARG_VISIT)
 //        arguments?.let {
@@ -41,6 +43,7 @@ class FragmentVisitAddEdit : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d(TAG, "onCreateView: starts")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_visit_add_edit, container, false)
     }
@@ -51,6 +54,7 @@ class FragmentVisitAddEdit : Fragment() {
 //    }
 
     override fun onAttach(context: Context) {
+        Log.d(TAG, "onAttach: starts")
         super.onAttach(context)
         if (context is OnGoClicked) {
             listener = context
@@ -60,6 +64,7 @@ class FragmentVisitAddEdit : Fragment() {
     }
 
     override fun onDetach() {
+        Log.d(TAG, "onDetach: starts")
         super.onDetach()
         listener = null
     }
