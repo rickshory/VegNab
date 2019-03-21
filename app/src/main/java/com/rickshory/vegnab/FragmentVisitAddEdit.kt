@@ -86,11 +86,9 @@ class FragmentVisitAddEdit : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
+         * @param visit The visit to edit, or null to add a new visit
          * @return A new instance of fragment FragmentVisitAddEdit.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(visit: Visit) =
             FragmentVisitAddEdit().apply {
