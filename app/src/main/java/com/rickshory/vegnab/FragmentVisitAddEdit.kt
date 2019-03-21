@@ -92,11 +92,11 @@ class FragmentVisitAddEdit : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(visit: Visit) =
             FragmentVisitAddEdit().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_VISIT, param1)
-                    putString(ARG_PARAM2, param2)
+                    putParcelable(ARG_VISIT, visit)
+//                    putString(ARG_PARAM2, param2)
                 }
             }
     }
