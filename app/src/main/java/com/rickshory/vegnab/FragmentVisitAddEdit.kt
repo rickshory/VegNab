@@ -17,7 +17,7 @@ private const val ARG_VISIT = "visit"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [FragmentVisitAddEdit.OnFragmentInteractionListener] interface
+ * [FragmentVisitAddEdit.OnGoClicked] interface
  * to handle interaction events.
  * Use the [FragmentVisitAddEdit.newInstance] factory method to
  * create an instance of this fragment.
@@ -26,7 +26,7 @@ private const val ARG_VISIT = "visit"
 class FragmentVisitAddEdit : Fragment() {
     private var visit: Visit? = null
 //    private var param2: String? = null
-    private var listener: OnFragmentInteractionListener? = null
+    private var listener: OnGoClicked? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,15 +47,15 @@ class FragmentVisitAddEdit : Fragment() {
 
 //    // TODO: Rename method, update argument and hook method into UI event
 //    fun onButtonPressed(uri: Uri) {
-//        listener?.onFragmentInteraction(uri)
+//        listener?.onGoClicked(uri)
 //    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
+        if (context is OnGoClicked) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            throw RuntimeException(context.toString() + " must implement OnGoClicked")
         }
     }
 
@@ -75,9 +75,9 @@ class FragmentVisitAddEdit : Fragment() {
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-    interface OnFragmentInteractionListener {
+    interface OnGoClicked {
         // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        fun onGoClicked(uri: Uri)
     }
 
     companion object {
