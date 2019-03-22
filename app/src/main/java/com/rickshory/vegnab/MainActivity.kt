@@ -7,6 +7,7 @@ import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
@@ -64,8 +65,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         Log.d(TAG, "editProject: start")
         // create a new fragment to edit the visit header
         val frag = FragmentVisitAddEdit.newInstance(visit)
-
-
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.content, frag) // probably not correct
+            .commit()
+        Log.d(TAG, "editProject: exit")
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
