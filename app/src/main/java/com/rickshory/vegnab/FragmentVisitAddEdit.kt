@@ -1,7 +1,6 @@
 package com.rickshory.vegnab
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -95,7 +94,7 @@ class FragmentVisitAddEdit : Fragment() {
          * @return A new instance of fragment FragmentVisitAddEdit.
          */
         @JvmStatic
-        fun newInstance(visit: Visit) =
+        fun newInstance(visit: Visit?) =
             FragmentVisitAddEdit().apply {
                 arguments = Bundle().apply {
                     putParcelable(ARG_VISIT, visit)

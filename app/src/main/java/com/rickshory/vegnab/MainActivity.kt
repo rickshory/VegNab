@@ -1,7 +1,5 @@
 package com.rickshory.vegnab
 
-import android.content.ContentResolver
-import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
@@ -63,6 +61,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     // wrong type, but use for testing
     private fun editProject(visit: Visit?) {
+        Log.d(TAG, "editProject: start")
+        // create a new fragment to edit the visit header
+        val frag = FragmentVisitAddEdit.newInstance(visit)
+
 
     }
 
