@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity(),
         val frag = FragmentVisitAddEdit.newInstance(visit)
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, frag)
+            .addToBackStack(null)
             .commit()
         Log.d(TAG, "editProject: exit")
     }
