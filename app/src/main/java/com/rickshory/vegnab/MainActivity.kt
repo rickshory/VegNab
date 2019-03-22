@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(),
         // create a new fragment to edit the visit header
         val frag = FragmentVisitAddEdit.newInstance(visit)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.content, frag) // probably not correct
+            .replace(R.id.fragment_container, frag)
             .commit()
         Log.d(TAG, "editProject: exit")
     }
