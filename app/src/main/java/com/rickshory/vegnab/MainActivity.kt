@@ -22,37 +22,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        // insert a row, and rename the previous one
-//        testUpdateRow((testInsert("Buddy")-1), "Sam")
-//        testRename("Sam", "Steve")
-//        testCutName("Colin")
-
-        val projection = arrayOf(Contract_Namers.Columns.ID,
-            Contract_Namers.Columns.NAMERS_NAME) // ignored
-        val sortOrder = Contract_Namers.Columns.ID
-//        val cursor = contentResolver.query(Contract_Namers.buildUriFromId(1),
-        val cursor = contentResolver.query(Contract_Namers.CONTENT_URI,
-//            projection,
-            null,
-            null,
-            null,
-            sortOrder)
-        Log.d(TAG, "******************************************")
-        cursor.use {
-            while(it.moveToNext()) {
-                // Cycle through all records
-                with(it) {
-                    val id = getLong(0)
-                    val namer = getString(1)
-                    val result = "ID: $id. Namer: $namer."
-                    Log.d(TAG, "onCreate: reading data [$result]")
-                }
-            }
-        }
-        Log.d(TAG, "******************************************")
-
-
-
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
