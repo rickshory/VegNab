@@ -36,48 +36,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
     }
 
-    private fun testCutName(badName: String): Int {
-        val selection = Contract_Namers.Columns.NAMERS_NAME + " = ?"
-        val selectionArgs = arrayOf(badName)
-        val taskUri = Contract_Namers.CONTENT_URI
-        val numRowsChanged = contentResolver.delete(taskUri, selection, selectionArgs)
-        Log.d(TAG, "Number of records cut = $numRowsChanged")
-        return numRowsChanged
-    }
-
-    private fun testRename(oldName: String, newName: String): Int {
-        val values = ContentValues().apply {
-            put(Contract_Namers.Columns.NAMERS_NAME, newName)
-        }
-
-        val selection = Contract_Namers.Columns.NAMERS_NAME + " = ?"
-        val selectionArgs = arrayOf(oldName)
-        val taskUri = Contract_Namers.CONTENT_URI
-        val numRowsChanged = contentResolver.update(taskUri, values, selection, selectionArgs)
-        Log.d(TAG, "Number of records changed = $numRowsChanged")
-        return numRowsChanged
-    }
-
-    private fun testUpdateRow(rowId: Long, newName: String) {
-        val values = ContentValues().apply {
-            put(Contract_Namers.Columns.NAMERS_NAME, newName)
-        }
-        val taskUri = Contract_Namers.buildUriFromId(rowId)
-        val numRowsChanged = contentResolver.update(taskUri, values, null, null)
-        Log.d(TAG, "Number of records changed = $numRowsChanged")
-    }
-
-    private fun testInsert(nameToAdd: String): Long {
-        val values = ContentValues().apply {
-            put(Contract_Namers.Columns.NAMERS_NAME, nameToAdd)
-        }
-        val uri = contentResolver.insert(Contract_Namers.CONTENT_URI, values)
-        Log.d(TAG, "New row id (in uri) is $uri")
-        val newRecId = Contract_Namers.getID(uri)
-        Log.d(TAG, "id (in uri) = $newRecId}")
-        return newRecId
-    }
-
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
