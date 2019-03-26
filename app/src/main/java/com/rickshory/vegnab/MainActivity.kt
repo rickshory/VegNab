@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity(),
 
         isLandscape = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
+        var ckFrag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISIT_HEADER)
+        if (ckFrag != null) {
+            // allow to do something if this fragment is up
+        }
+
         fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
@@ -34,7 +39,7 @@ class MainActivity : AppCompatActivity(),
             val visit = null // testing
             val frag = FragmentVisitAddEdit.newInstance(visit)
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, frag)
+                .replace(R.id.fragment_container, frag, Tags.Fragments.VISIT_HEADER)
                 .addToBackStack(null)
                 .commit()
             Log.d(TAG, "fab action: exit")
