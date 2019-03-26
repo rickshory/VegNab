@@ -1,13 +1,12 @@
 package com.rickshory.vegnab
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,10 +17,14 @@ class MainActivity : AppCompatActivity(),
     FragmentVisitAddEdit.OnGoClicked,
     NavigationView.OnNavigationItemSelectedListener {
 
+    private var isLandscape = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        isLandscape = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
         fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
