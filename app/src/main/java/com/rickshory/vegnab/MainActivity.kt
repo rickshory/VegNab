@@ -24,8 +24,18 @@ class MainActivity : AppCompatActivity(),
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+            Log.d(TAG, "fab action: start")
+            // create a new fragment to edit the visit header
+            val visit = null // testing
+            val frag = FragmentVisitAddEdit.newInstance(visit)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, frag)
+                .addToBackStack(null)
+                .commit()
+            Log.d(TAG, "fab action: exit")
+
         }
 
         val toggle = ActionBarDrawerToggle(
