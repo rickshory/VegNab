@@ -9,6 +9,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -29,6 +30,11 @@ class MainActivity : AppCompatActivity(),
         var ckFrag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISIT_HEADER)
         if (ckFrag != null) {
             // allow to do something if this fragment is up
+//            fragment_container.visibility = View.VISIBLE
+//            other_frag_container.view?.visibility = if(isLandscape) View.VISIBLE else View.GONE
+        } else {
+//            fragment_container.visibility = View.VISIBLE
+//            other_frag_container.view?.visibility = if(isLandscape) View.VISIBLE else View.GONE
         }
 
         fab.setOnClickListener { view ->
