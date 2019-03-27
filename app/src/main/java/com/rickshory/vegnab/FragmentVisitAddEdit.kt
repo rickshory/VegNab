@@ -17,7 +17,7 @@ private const val ARG_VISIT = "visit"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [FragmentVisitAddEdit.SubplotsTruck] interface
+ * [FragmentVisitAddEdit.VisitHeaderInterface] interface
  * to handle interaction events.
  * Use the [FragmentVisitAddEdit.newInstance] factory method to
  * create an instance of this fragment.
@@ -26,7 +26,7 @@ private const val ARG_VISIT = "visit"
 class FragmentVisitAddEdit : Fragment() {
     private var visit: Visit? = null
 //    private var param2: String? = null
-    private var listener: SubplotsTruck? = null
+    private var listener: VisitHeaderInterface? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate: starts")
@@ -55,10 +55,10 @@ class FragmentVisitAddEdit : Fragment() {
     override fun onAttach(context: Context) {
         Log.d(TAG, "onAttach: starts")
         super.onAttach(context)
-        if (context is SubplotsTruck) {
+        if (context is VisitHeaderInterface) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement SubplotsTruck")
+            throw RuntimeException(context.toString() + " must implement VisitHeaderInterface")
         }
     }
 
@@ -79,7 +79,7 @@ class FragmentVisitAddEdit : Fragment() {
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-    interface SubplotsTruck {
+    interface VisitHeaderInterface {
         // TODO: Update argument type and name
 //        fun onGoClicked(uri: Uri)
         fun onGoClicked()

@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 
 private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity(),
-    FragmentVisitAddEdit.SubplotsTruck,
+    FragmentVisitAddEdit.VisitHeaderInterface,
     NavigationView.OnNavigationItemSelectedListener {
 
     private var isLandscape = false
