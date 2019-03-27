@@ -10,7 +10,7 @@ import android.view.ViewGroup
 /**
  * A placeholder fragment containing a simple view.
  */
-class Fragment_Visits : Fragment() {
+class FragmentVisitsList : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
