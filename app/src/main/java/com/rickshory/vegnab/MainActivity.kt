@@ -30,12 +30,13 @@ class MainActivity : AppCompatActivity(),
         var ckFrag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISIT_HEADER)
         if (ckFrag != null) {
             // allow to do something if this fragment is up
-//            fragment_container.visibility = View.VISIBLE
-//            other_frag_container.view?.visibility = if(isLandscape) View.VISIBLE else View.GONE
+            showDefaultLayout()
         } else {
 //            fragment_container.visibility = View.VISIBLE
-//            other_frag_container.view?.visibility = if(isLandscape) View.VISIBLE else View.GONE
+//            other_frag_container.view?.visibility = if(isLandscape) View.INVISIBLE else View.GONE
         }
+
+
 
         fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -52,6 +53,8 @@ class MainActivity : AppCompatActivity(),
 
         }
 
+
+
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
@@ -61,6 +64,10 @@ class MainActivity : AppCompatActivity(),
         nav_view.setNavigationItemSelectedListener(this)
     }
 
+    private fun showDefaultLayout() {
+//            fragment_container.visibility = View.VISIBLE
+//            other_frag_container.view?.visibility = if(isLandscape) View.VISIBLE else View.GONE
+    }
     override fun onGoClicked() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -96,9 +103,11 @@ class MainActivity : AppCompatActivity(),
         // create a new fragment to edit the visit header
         val frag = FragmentVisitAddEdit.newInstance(visit)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, frag)
+            .replace(R.id.fragment_container, frag, Tags.Fragments.VISIT_HEADER)
             .addToBackStack(null)
             .commit()
+
+        showDefaultLayout()
         Log.d(TAG, "editProject: exit")
     }
 
