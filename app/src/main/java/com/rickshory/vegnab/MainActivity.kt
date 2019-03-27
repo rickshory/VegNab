@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity(),
         }
 
 
+//        val visitsListFragment = Fragment_Visits.newInstance()
 
         fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
