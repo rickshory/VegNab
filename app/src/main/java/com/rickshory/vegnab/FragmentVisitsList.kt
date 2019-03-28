@@ -6,12 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-
 /**
- * A placeholder fragment containing a simple view.
+ * A simple [Fragment] subclass.
+ * Activities that contain this fragment must implement the
+ * [FragmentVisitsList.VisitsListInterface] interface
+ * to handle interaction events.
+ * Use the [FragmentVisitsList.newInstance] factory method to
+ * create an instance of this fragment.
  */
-class FragmentVisitsList : Fragment() {
+private const val TAG = "FragmentVisitsList"
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_VIS_LIST_OPTS = "visListOpts"
 
+class FragmentVisitsList : Fragment() {
+//VisitsListOpts
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
