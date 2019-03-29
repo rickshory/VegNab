@@ -82,7 +82,7 @@ class FragmentVisitAddEdit : Fragment() {
     interface VisitHeaderInterface {
         // TODO: Update argument type and name
 //        fun onGoClicked(uri: Uri)
-        fun onGoClicked()
+        fun visHeaderOnGoClicked()
     }
 
     companion object {

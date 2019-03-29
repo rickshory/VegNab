@@ -80,7 +80,7 @@ class FragmentVisitsList : Fragment() {
     interface VisitsListInterface {
         // TODO: Update argument type and name
 //        fun onGoClicked(uri: Uri)
-        fun onGoClicked()
+        fun visitsListOnGoClicked()
     }
 
     companion object {

@@ -76,8 +76,13 @@ class MainActivity : AppCompatActivity(),
 //            fragment_container.visibility = View.VISIBLE
 //            other_frag_container.view?.visibility = if(isLandscape) View.VISIBLE else View.GONE
     }
-    override fun onGoClicked() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    override fun visitsListOnGoClicked() {
+
+    }
+
+    override fun visHeaderOnGoClicked() {
+
     }
 
     override fun onBackPressed() {
