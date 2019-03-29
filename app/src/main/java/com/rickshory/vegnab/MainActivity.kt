@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 
 private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity(),
+    FragmentVisitsList.VisitsListInterface,
     FragmentVisitAddEdit.VisitHeaderInterface,
     NavigationView.OnNavigationItemSelectedListener {
 
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity(),
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
             Log.d(TAG, "fab action: start")
-            showVisitAddEditFragment(null)
+            showVisitsListFragment(null)
             Log.d(TAG, "fab action: exit")
         }
 
