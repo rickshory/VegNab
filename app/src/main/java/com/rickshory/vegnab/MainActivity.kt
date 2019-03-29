@@ -55,6 +55,14 @@ class MainActivity : AppCompatActivity(),
         nav_view.setNavigationItemSelectedListener(this)
     }
 
+    private fun showVisitsListFragment(visitsListOpts: VisitsListOpts?) {
+        val frag = FragmentVisitsList.newInstance(visitsListOpts)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, frag, Tags.Fragments.VISITS_LIST)
+            .addToBackStack(null)
+            .commit()
+    }
+
     private fun showVisitAddEditFragment(visit: Visit?) {
         val frag = FragmentVisitAddEdit.newInstance(visit)
         supportFragmentManager.beginTransaction()
@@ -62,7 +70,7 @@ class MainActivity : AppCompatActivity(),
             .addToBackStack(null)
             .commit()
     }
-    
+
     private fun showDefaultLayout() {
 //            fragment_container.visibility = View.VISIBLE
 //            other_frag_container.view?.visibility = if(isLandscape) View.VISIBLE else View.GONE
