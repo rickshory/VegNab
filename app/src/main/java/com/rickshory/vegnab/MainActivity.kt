@@ -50,9 +50,10 @@ class MainActivity : AppCompatActivity(),
 
     private fun showVisitsListFragment(visitsListOpts: VisitsListOpts?) {
         val frag = FragmentVisitsList.newInstance(visitsListOpts)
+        val ct = supportFragmentManager.backStackEntryCount
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, frag, Tags.Fragments.VISITS_LIST)
-            .addToBackStack(null)
+        // .addToBackStack(null)
             .commit()
     }
 
