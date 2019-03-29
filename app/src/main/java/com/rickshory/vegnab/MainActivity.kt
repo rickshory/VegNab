@@ -104,25 +104,25 @@ class MainActivity : AppCompatActivity(),
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
-            R.id.visits_action_new_proj -> editProject(null) // wrong type, but use for testing
-//            R.id.main_action_settings -> return true
+//            R.id.visits_action_new_proj -> editProject(null) // wrong type, but use for testing
+            R.id.main_action_settings -> return true
         }
         return super.onOptionsItemSelected(item)
     }
 
-    // wrong type, but use for testing
-    private fun editProject(visit: Visit?) {
-        Log.d(TAG, "editProject: start")
-        // create a new fragment to edit the visit header
-        val frag = FragmentVisitAddEdit.newInstance(visit)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, frag, Tags.Fragments.VISIT_HEADER)
-            .addToBackStack(null)
-            .commit()
-
-        showDefaultLayout()
-        Log.d(TAG, "editProject: exit")
-    }
+//    // wrong type, but use for testing
+//    private fun editProject(visit: Visit?) {
+//        Log.d(TAG, "editProject: start")
+//        // create a new fragment to edit the visit header
+//        val frag = FragmentVisitAddEdit.newInstance(visit)
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.fragment_container, frag, Tags.Fragments.VISIT_HEADER)
+//            .addToBackStack(null)
+//            .commit()
+//
+//        showDefaultLayout()
+//        Log.d(TAG, "editProject: exit")
+//    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
