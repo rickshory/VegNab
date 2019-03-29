@@ -36,17 +36,6 @@ class MainActivity : AppCompatActivity(),
 //            other_frag_container.view?.visibility = if(isLandscape) View.INVISIBLE else View.GONE
         }
 
-
-//        val visitsListFragment = FragmentVisitsList.newInstance()
-
-        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-            Log.d(TAG, "fab action: start")
-
-            Log.d(TAG, "fab action: exit")
-        }
-
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
