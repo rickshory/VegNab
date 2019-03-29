@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(),
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
             Log.d(TAG, "fab action: start")
-            showVisitsListFragment(null)
+
             Log.d(TAG, "fab action: exit")
         }
 
@@ -54,6 +54,9 @@ class MainActivity : AppCompatActivity(),
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        // this this the right place to call showVisitsListFragment?
+        showVisitsListFragment(null)
     }
 
     private fun showVisitsListFragment(visitsListOpts: VisitsListOpts?) {
