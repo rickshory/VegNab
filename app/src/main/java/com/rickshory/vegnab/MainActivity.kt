@@ -42,18 +42,9 @@ class MainActivity : AppCompatActivity(),
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
             Log.d(TAG, "fab action: start")
-            // create a new fragment to edit the visit header
-            val visit = null // testing
-            val frag = FragmentVisitAddEdit.newInstance(visit)
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, frag, Tags.Fragments.VISIT_HEADER)
-                .addToBackStack(null)
-                .commit()
+            showVisitAddEditFragment(null)
             Log.d(TAG, "fab action: exit")
-
         }
-
-
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
@@ -64,6 +55,14 @@ class MainActivity : AppCompatActivity(),
         nav_view.setNavigationItemSelectedListener(this)
     }
 
+    private fun showVisitAddEditFragment(visit: Visit?) {
+        val frag = FragmentVisitAddEdit.newInstance(visit)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, frag, Tags.Fragments.VISIT_HEADER)
+            .addToBackStack(null)
+            .commit()
+    }
+    
     private fun showDefaultLayout() {
 //            fragment_container.visibility = View.VISIBLE
 //            other_frag_container.view?.visibility = if(isLandscape) View.VISIBLE else View.GONE
