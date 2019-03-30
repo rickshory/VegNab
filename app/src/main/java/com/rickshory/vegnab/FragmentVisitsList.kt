@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_visits.*
 
 /**
  * A simple [Fragment] subclass.
@@ -33,6 +35,14 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
+
+        fab_new_visit.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+            Log.d(TAG, "fab action: start")
+
+            Log.d(TAG, "fab action: exit")
+        }
     }
 
     override fun onCreateView(
