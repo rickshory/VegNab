@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun visitsListOnGoClicked() {
-
+        showVisitAddEditFragment(null)
     }
 
     override fun visHeaderOnGoClicked() {

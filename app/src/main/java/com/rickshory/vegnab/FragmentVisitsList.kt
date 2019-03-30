@@ -65,11 +65,11 @@ class FragmentVisitsList : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         fab_new_visit.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-            Log.d(TAG, "fab action: start")
-
-            Log.d(TAG, "fab action: exit")
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+            Log.d(TAG, "fab_new_visit action: start")
+            visitsListOnGoClicked()
+            Log.d(TAG, "fab_new_visit action: exit")
         }
     }
 
