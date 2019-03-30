@@ -68,7 +68,7 @@ class FragmentVisitsList : Fragment() {
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
             Log.d(TAG, "fab_new_visit action: start")
-            (context as MainActivity).visitsListOnGoClicked()
+            listener?.visitsListOnGoClicked()
             Log.d(TAG, "fab_new_visit action: exit")
         }
     }
