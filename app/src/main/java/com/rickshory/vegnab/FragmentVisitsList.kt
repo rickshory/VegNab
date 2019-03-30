@@ -35,14 +35,6 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
-
-        fab_new_visit.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-            Log.d(TAG, "fab action: start")
-
-            Log.d(TAG, "fab action: exit")
-        }
     }
 
     override fun onCreateView(
@@ -67,6 +59,17 @@ class FragmentVisitsList : Fragment() {
             listener = context
         } else {
             throw RuntimeException(context.toString() + " must implement VisitsListInterface")
+        }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        fab_new_visit.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+            Log.d(TAG, "fab action: start")
+
+            Log.d(TAG, "fab action: exit")
         }
     }
 
