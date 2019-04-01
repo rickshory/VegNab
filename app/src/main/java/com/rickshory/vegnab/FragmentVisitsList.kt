@@ -67,8 +67,10 @@ class FragmentVisitsList : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         // back button is up arrow
-        val actionbar = (listener as AppCompatActivity?)?.supportActionBar
-        actionbar?.setDisplayHomeAsUpEnabled(true)
+        if (listener is AppCompatActivity) {
+              val actionbar = (listener as AppCompatActivity?)?.supportActionBar
+            actionbar?.setDisplayHomeAsUpEnabled(true)
+        }
 
         fab_new_visit.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
