@@ -67,7 +67,7 @@ class FragmentVisitsList : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         // back button is up arrow
-        val actionbar = (listener as AppCompatActivity).supportActionBar
+        val actionbar = (listener as AppCompatActivity?)?.supportActionBar
         actionbar?.setDisplayHomeAsUpEnabled(true)
 
         fab_new_visit.setOnClickListener { view ->
