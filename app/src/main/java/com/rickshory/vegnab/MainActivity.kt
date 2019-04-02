@@ -107,7 +107,8 @@ class MainActivity : AppCompatActivity(),
             R.id.main_action_settings -> return true
             android.R.id.home -> {
                 Log.d(TAG, "onOptionsItemSelected: Home button tapped")
-                
+                val frag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISITS_LIST)
+                removeFragment(frag)
             }
         }
         return super.onOptionsItemSelected(item)
