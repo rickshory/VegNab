@@ -106,6 +106,7 @@ class MainActivity : AppCompatActivity(),
 //            R.id.visits_action_new_proj -> editProject(null) // wrong type, but use for testing
             R.id.main_action_settings -> return true
             android.R.id.home -> {
+                Log.d(TAG, "onOptionsItemSelected: Home button tapped")
                 
             }
         }
