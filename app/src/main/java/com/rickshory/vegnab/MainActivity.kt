@@ -105,11 +105,11 @@ class MainActivity : AppCompatActivity(),
         when (item.itemId) {
 //            R.id.visits_action_new_proj -> editProject(null) // wrong type, but use for testing
             R.id.main_action_settings -> return true
-            android.R.id.home -> {
-                Log.d(TAG, "onOptionsItemSelected: Home button tapped")
-                val frag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISITS_LIST)
-                removeFragment(frag)
-            }
+//            android.R.id.home -> {
+//                Log.d(TAG, "onOptionsItemSelected: Home button tapped")
+//                val frag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISITS_LIST)
+//                removeFragment(frag)
+//            }
         }
         return super.onOptionsItemSelected(item)
     }
