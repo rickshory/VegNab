@@ -47,6 +47,11 @@ class FragmentVisitAddEdit : Fragment() {
         return inflater.inflate(R.layout.fragment_visit_add_edit, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
+
 //    // TODO: Rename method, update argument and hook method into UI event
 //    fun onButtonPressed(uri: Uri) {
 //        listener?.onGoClicked(uri)
