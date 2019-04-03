@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 
 private const val TAG = "FragmentVisitAddEdit"
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -48,7 +49,18 @@ class FragmentVisitAddEdit : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        Log.d(TAG, "onViewCreated: starts")
+        if (savedInstanceState == null) {
+            if (visit != null) {
+                Log.d(TAG, "onViewCreated: editing Visit, ${visit.id}")
+                vae_inp_name.setText(visit.name)
+                vae_inp_notes.setText(visit.notes)
+                vae_inp_location.setText(visit.location)
+            } else {
+                // no visit, so adding/edition a new one
+                Log.d(TAG, "onViewCreated: no args, adding new rec")
+            }
+        }
 
     }
 
