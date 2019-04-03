@@ -51,6 +51,7 @@ class FragmentVisitAddEdit : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d(TAG, "onViewCreated: starts")
         if (savedInstanceState == null) {
+            val visit = visit // copy to local variable
             if (visit != null) {
                 Log.d(TAG, "onViewCreated: editing Visit, ${visit.id}")
                 vae_inp_name.setText(visit.name)
