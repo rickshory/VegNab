@@ -88,12 +88,12 @@ class MainActivity : AppCompatActivity(),
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
-            val frag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISIT_HEADER)
-            if (frag == null || isLandscape) {
-                super.onBackPressed()
-            } else {
-                // remove fragment
-            }
+//            val frag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISIT_HEADER)
+//            if (frag == null || isLandscape) {
+//                super.onBackPressed()
+//            } else {
+//                // remove fragment
+//            }
             super.onBackPressed()
         }
     }
