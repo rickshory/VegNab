@@ -69,7 +69,12 @@ class FragmentVisitAddEdit : Fragment() {
         // update record if at least one field has changed
         val values = ContentValues()
         val visit = visit
-        
+        if (visit != null) {
+            Log.d(TAG, "saveVisit: updating existing visit")
+            if (vae_inp_name.toString() != visit.name) {
+                values.put(Contract_Projects.Columns.PROJECT_CODE, vae_inp_name.toString()) // not correct, for testing
+            }
+        }
     }
 
 //    // TODO: Rename method, update argument and hook method into UI event
