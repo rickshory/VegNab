@@ -1,5 +1,6 @@
 package com.rickshory.vegnab
 
+import android.content.ContentValues
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -65,6 +66,9 @@ class FragmentVisitAddEdit : Fragment() {
     }
 
     private fun saveVisit() {
+        // update record if at least one field has changed
+        val values = ContentValues()
+        val visit = visit
         
     }
 
