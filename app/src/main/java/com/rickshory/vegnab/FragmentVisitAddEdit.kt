@@ -62,7 +62,10 @@ class FragmentVisitAddEdit : Fragment() {
                 Log.d(TAG, "onViewCreated: no args, adding new rec")
             }
         }
+    }
 
+    private fun saveVisit() {
+        
     }
 
 //    // TODO: Rename method, update argument and hook method into UI event
