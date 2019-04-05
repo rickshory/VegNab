@@ -120,6 +120,17 @@ FOREIGN KEY("RefLocID") REFERENCES Locations("_id"),
 FOREIGN KEY("AdditionalLocationSelected") REFERENCES Locations("_id"),
 FOREIGN KEY("AdditionalLocationsType") REFERENCES LocationTypes("_id")
 );*/
+        sSQL = """
+        CREATE TABLE ${Contract_Visits.TABLE_NAME} (
+        ${Contract_Visits.Columns.ID} INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+        ${Contract_Visits.Columns.VISIT_NAME} VARCHAR(16) NOT NULL
+        CHECK (LENGTH(${Contract_Visits.Columns.VISIT_NAME})>=2),
+        ${Contract_Visits.Columns.VISIT_LOCATION} VARCHAR(50) NOT NULL,
+        ${Contract_Visits.Columns.VISIT_NOTES} VARCHAR(255)
+        );
+        """.replaceIndent(" ")
+        Log.d(TAG, "sSQL2: $sSQL")
+        db.execSQL(sSQL)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
