@@ -41,7 +41,7 @@ internal class AppDatabase private constructor(context: Context ):
         //"IsDeleted" BOOL NOT NULL DEFAULT 0 -- don't allow user to actually delete a project, just flag it; need to keep for species Placeholders
         //)
         Log.d(TAG, "OnCreate: starts")
-        val sSQL = """
+        var sSQL = """
         CREATE TABLE ${Contract_Projects.TABLE_NAME} (
         ${Contract_Projects.Columns.ID} INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
         ${Contract_Projects.Columns.PROJECT_CODE} VARCHAR(10) NOT NULL
@@ -60,15 +60,15 @@ internal class AppDatabase private constructor(context: Context ):
         Log.d(TAG, "sSQL: $sSQL")
         db.execSQL(sSQL)
 
-        val sSQL2 = """
+        sSQL = """
         CREATE TABLE ${Contract_Namers.TABLE_NAME} (
         ${Contract_Namers.Columns.ID} INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
         ${Contract_Namers.Columns.NAMERS_NAME} VARCHAR(10) NOT NULL
         CHECK (LENGTH(${Contract_Namers.Columns.NAMERS_NAME})>=2)
         );
         """.replaceIndent(" ")
-        Log.d(TAG, "sSQL2: $sSQL2")
-        db.execSQL(sSQL2)
+        Log.d(TAG, "sSQL2: $sSQL")
+        db.execSQL(sSQL)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
