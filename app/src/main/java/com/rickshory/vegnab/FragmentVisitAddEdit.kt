@@ -77,14 +77,14 @@ class FragmentVisitAddEdit : Fragment() {
 
         } else {
             Log.d(TAG, "saveVisit: updating existing visit")
-            if (vae_inp_name.toString() != visit.name) {
-                values.put(Contract_Visits.Columns.VISIT_NAME, vae_inp_name.toString())
+            if (vae_inp_name.text.toString() != visit.name) {
+                values.put(Contract_Visits.Columns.VISIT_NAME, vae_inp_name.text.toString())
             }
-            if (vae_inp_location.toString() != visit.location) {
-                values.put(Contract_Visits.Columns.VISIT_LOCATION, vae_inp_location.toString())
+            if (vae_inp_location.text.toString() != visit.location) {
+                values.put(Contract_Visits.Columns.VISIT_LOCATION, vae_inp_location.text.toString())
             }
-            if (vae_inp_notes.toString() != visit.notes) {
-                values.put(Contract_Visits.Columns.VISIT_NOTES, vae_inp_notes.toString())
+            if (vae_inp_notes.text.toString() != visit.notes) {
+                values.put(Contract_Visits.Columns.VISIT_NOTES, vae_inp_notes.text.toString())
             }
             if (values.size() != 0) {
                 Log.d(TAG, "saveVisit: updating record")
