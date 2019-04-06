@@ -80,6 +80,11 @@ class FragmentVisitAddEdit : Fragment() {
             if (vae_inp_notes.toString() != visit.notes) {
                 values.put(Contract_Visits.Columns.VISIT_NOTES, vae_inp_notes.toString())
             }
+            if (values.size() != 0) {
+                Log.d(TAG, "saveVisit: updating record")
+                activity?.contentResolver?.update(Contract_Visits.buildUriFromId(visit.id),
+                    values, null, null)
+            }
         }
     }
 
