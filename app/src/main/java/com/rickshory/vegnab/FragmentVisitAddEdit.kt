@@ -74,6 +74,12 @@ class FragmentVisitAddEdit : Fragment() {
             if (vae_inp_name.toString() != visit.name) {
                 values.put(Contract_Visits.Columns.VISIT_NAME, vae_inp_name.toString())
             }
+            if (vae_inp_location.toString() != visit.location) {
+                values.put(Contract_Visits.Columns.VISIT_LOCATION, vae_inp_location.toString())
+            }
+            if (vae_inp_notes.toString() != visit.notes) {
+                values.put(Contract_Visits.Columns.VISIT_NOTES, vae_inp_notes.toString())
+            }
         }
     }
 
