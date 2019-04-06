@@ -74,6 +74,9 @@ class FragmentVisitAddEdit : Fragment() {
             if (vae_inp_name.text.isNotEmpty() && vae_inp_location.text.isNotEmpty()) {
                 values.put(Contract_Visits.Columns.VISIT_NAME, vae_inp_name.text.toString())
                 values.put(Contract_Visits.Columns.VISIT_LOCATION, vae_inp_location.text.toString())
+                if (vae_inp_notes.text.toString() != visit.notes) {
+                    values.put(Contract_Visits.Columns.VISIT_NOTES, vae_inp_notes.text.toString())
+                }
             }
 
         } else {
