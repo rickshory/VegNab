@@ -55,7 +55,6 @@ internal class AppDatabase private constructor(context: Context ):
         ${Contract_Projects.Columns.PROJECT_HIDE_ON_MOBILE} BOOL NOT NULL DEFAULT 0, -- reduce clutter on mobile device
         ${Contract_Projects.Columns.PROJECT_IS_DELETED} BOOL NOT NULL DEFAULT 0 -- don't allow user to actually delete a project, just flag it; need to keep for species Placeholders
         );
-
         """.replaceIndent(" ")
         Log.d(TAG, "sSQL: $sSQL")
         db.execSQL(sSQL)

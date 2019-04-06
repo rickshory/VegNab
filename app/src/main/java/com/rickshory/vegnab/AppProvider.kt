@@ -37,9 +37,9 @@ class AppProvider: ContentProvider() {
         matcher.addURI(CONTENT_AUTHORITY, Contract_Projects.TABLE_NAME, PROJECTS)
         matcher.addURI(CONTENT_AUTHORITY, "${Contract_Projects.TABLE_NAME}/#", PROJECTS_ID)
 
-//        matcher.addURI(CONTENT_AUTHORITY, Contract_Visits.TABLE_NAME, VISITS)
-//        matcher.addURI(CONTENT_AUTHORITY, "${Contract_Visits.TABLE_NAME}/#", VISITS_ID)
-//
+        matcher.addURI(CONTENT_AUTHORITY, Contract_Visits.TABLE_NAME, VISITS)
+        matcher.addURI(CONTENT_AUTHORITY, "${Contract_Visits.TABLE_NAME}/#", VISITS_ID)
+
 //        matcher.addURI(CONTENT_AUTHORITY, Contract_VegItems.TABLE_NAME, VEGITEMS)
 //        matcher.addURI(CONTENT_AUTHORITY, "${Contract_VegItems.TABLE_NAME}/#", VEGITEMS_ID)
         matcher.addURI(CONTENT_AUTHORITY, Contract_Namers.TABLE_NAME, NAMERS)
@@ -57,6 +57,9 @@ class AppProvider: ContentProvider() {
         return when (match) {
             PROJECTS -> Contract_Projects.CONTENT_TYPE
             PROJECTS_ID -> Contract_Projects.CONTENT_ITEM_TYPE
+
+            VISITS -> Contract_Projects.CONTENT_TYPE
+            VISITS_ID -> Contract_Projects.CONTENT_ITEM_TYPE
 
             NAMERS -> Contract_Namers.CONTENT_TYPE
             NAMERS_ID -> Contract_Namers.CONTENT_ITEM_TYPE
@@ -82,6 +85,15 @@ class AppProvider: ContentProvider() {
                 queryBuilder.tables = Contract_Projects.TABLE_NAME
                 val id = Contract_Projects.getID(uri)
                 queryBuilder.appendWhere("${Contract_Projects.Columns.ID} = ")
+                queryBuilder.appendWhereEscapeString("$id")
+            }
+
+            VISITS -> queryBuilder.tables = Contract_Visits.TABLE_NAME
+
+            VISITS_ID -> {
+                queryBuilder.tables = Contract_Visits.TABLE_NAME
+                val id = Contract_Visits.getID(uri)
+                queryBuilder.appendWhere("${Contract_Visits.Columns.ID} = ")
                 queryBuilder.appendWhereEscapeString("$id")
             }
 
@@ -116,6 +128,16 @@ class AppProvider: ContentProvider() {
                 recordID = db.insert(Contract_Projects.TABLE_NAME, null, values)
                 if (recordID != -1L) {
                     returnUri = Contract_Projects.buildUriFromId(recordID)
+                } else {
+                    throw SQLException("Failed to insert. Uri was: $uri")
+                }
+            }
+
+            VISITS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                recordID = db.insert(Contract_Visits.TABLE_NAME, null, values)
+                if (recordID != -1L) {
+                    returnUri = Contract_Visits.buildUriFromId(recordID)
                 } else {
                     throw SQLException("Failed to insert. Uri was: $uri")
                 }
@@ -159,6 +181,21 @@ class AppProvider: ContentProvider() {
                     selectionCriteria += " AND ($selection)"
                 }
                 count = db.update(Contract_Projects.TABLE_NAME, values, selectionCriteria, selectionArgs)
+            }
+
+            VISITS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                count = db.update(Contract_Visits.TABLE_NAME, values, selection, selectionArgs)
+            }
+
+            VISITS_ID -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                val id = Contract_Visits.getID(uri)
+                selectionCriteria = "${Contract_Visits.Columns.ID}=$id"
+                if (selection != null && selection.isNotEmpty()) {
+                    selectionCriteria += " AND ($selection)"
+                }
+                count = db.update(Contract_Visits.TABLE_NAME, values, selectionCriteria, selectionArgs)
             }
 
             NAMERS -> {
@@ -206,6 +243,21 @@ class AppProvider: ContentProvider() {
                 count = db.delete(Contract_Projects.TABLE_NAME, selectionCriteria, selectionArgs)
             }
 
+            VISITS -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                count = db.delete(Contract_Visits.TABLE_NAME, selection, selectionArgs)
+            }
+
+            VISITS_ID -> {
+                val db = AppDatabase.getInstance(context).writableDatabase
+                val id = Contract_Visits.getID(uri)
+                selectionCriteria = "${Contract_Visits.Columns.ID}=$id"
+                if (selection != null && selection.isNotEmpty()) {
+                    selectionCriteria += " AND ($selection)"
+                }
+                count = db.delete(Contract_Visits.TABLE_NAME, selectionCriteria, selectionArgs)
+            }
+
             NAMERS -> {
                 val db = AppDatabase.getInstance(context).writableDatabase
                 count = db.delete(Contract_Namers.TABLE_NAME, selection, selectionArgs)
@@ -225,5 +277,4 @@ class AppProvider: ContentProvider() {
         Log.d(TAG, "done with delete: count = $count")
         return count
     }
-
 }
