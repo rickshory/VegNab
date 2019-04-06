@@ -69,7 +69,13 @@ class FragmentVisitAddEdit : Fragment() {
         // update record if at least one field has changed
         val values = ContentValues()
         val visit = visit
-        if (visit != null) {
+        if (visit == null) {
+            Log.d(TAG, "saveVisit: adding new visit")
+            if (vae_inp_name.text.isNotEmpty()) {
+                values.put(Contract_Visits.Columns.VISIT_NAME, vae_inp_name.text.toString())
+            }
+
+        } else {
             Log.d(TAG, "saveVisit: updating existing visit")
             if (vae_inp_name.toString() != visit.name) {
                 values.put(Contract_Visits.Columns.VISIT_NAME, vae_inp_name.toString())
