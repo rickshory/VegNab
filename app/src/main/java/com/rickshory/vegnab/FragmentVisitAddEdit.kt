@@ -78,8 +78,9 @@ class FragmentVisitAddEdit : Fragment() {
                     values.put(Contract_Visits.Columns.VISIT_NOTES, vae_inp_notes.text.toString())
                 }
                 // put defaults, such as timestamps, here
+                Log.d(TAG, "saveVisit: creating new record")
+                activity?.contentResolver?.insert(Contract_Visits.CONTENT_URI, values)
             }
-
         } else {
             Log.d(TAG, "saveVisit: updating existing visit")
             if (vae_inp_name.text.toString() != visit.name) {
