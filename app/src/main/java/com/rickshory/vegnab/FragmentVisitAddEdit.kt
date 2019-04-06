@@ -72,7 +72,7 @@ class FragmentVisitAddEdit : Fragment() {
         if (visit != null) {
             Log.d(TAG, "saveVisit: updating existing visit")
             if (vae_inp_name.toString() != visit.name) {
-                values.put(Contract_Projects.Columns.PROJECT_CODE, vae_inp_name.toString()) // not correct, for testing
+                values.put(Contract_Visits.Columns.VISIT_NAME, vae_inp_name.toString())
             }
         }
     }
