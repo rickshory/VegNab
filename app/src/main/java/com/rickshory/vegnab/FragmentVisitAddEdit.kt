@@ -3,6 +3,8 @@ package com.rickshory.vegnab
 import android.content.ContentValues
 import android.content.Context
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -28,6 +30,18 @@ private const val ARG_VISIT = "visit"
  *
  */
 class FragmentVisitAddEdit : Fragment() {
+
+    fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+        this.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                afterTextChanged.invoke(s.toString())
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
+        })
+    }
 
     fun EditText.tryStore () {
         Log.d(TAG, "tryStore: starts")
