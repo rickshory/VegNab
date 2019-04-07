@@ -64,10 +64,7 @@ class FragmentVisitAddEdit : Fragment() {
             }
         }
     }
-
-    override fun onUserInteraction() {
-
-    }
+    
 
     private fun saveVisit() {
         // update record if at least one field has changed
