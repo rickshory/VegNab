@@ -17,10 +17,7 @@ private const val ARG_VISIT = "visit"
 //private const val ARG_PARAM1 = "param1"
 //private const val ARG_PARAM2 = "param2"
 
-fun EditText.tryStore () {
-    Log.d(TAG, "tryStore: starts")
 
-}
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
@@ -31,6 +28,13 @@ fun EditText.tryStore () {
  *
  */
 class FragmentVisitAddEdit : Fragment() {
+
+    fun EditText.tryStore () {
+        Log.d(TAG, "tryStore: starts")
+        saveVisit()
+
+    }
+
     private var visit: Visit? = null
 //    private var param2: String? = null
     private var listener: VisitHeaderInterface? = null
