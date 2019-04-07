@@ -65,7 +65,7 @@ class FragmentVisitAddEdit : Fragment() {
         }
     }
 
-    override fun onFocusChange(view: View, hasFocus: Boolean) {
+    override fun onUserInteraction() {
 
     }
 
