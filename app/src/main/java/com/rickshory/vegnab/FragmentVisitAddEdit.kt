@@ -65,6 +65,10 @@ class FragmentVisitAddEdit : Fragment() {
         }
     }
 
+    override fun onFocusChange(view: View, hasFocus: Boolean) {
+
+    }
+
     private fun saveVisit() {
         // update record if at least one field has changed
         val values = ContentValues()
