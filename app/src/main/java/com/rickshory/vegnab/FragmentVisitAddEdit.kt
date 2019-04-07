@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 
 private const val TAG = "FragmentVisitAddEdit"
@@ -16,6 +17,10 @@ private const val ARG_VISIT = "visit"
 //private const val ARG_PARAM1 = "param1"
 //private const val ARG_PARAM2 = "param2"
 
+fun EditText.tryStore () {
+    Log.d(TAG, "tryStore: starts")
+
+}
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
@@ -64,7 +69,7 @@ class FragmentVisitAddEdit : Fragment() {
             }
         }
     }
-    
+
 
     private fun saveVisit() {
         // update record if at least one field has changed
