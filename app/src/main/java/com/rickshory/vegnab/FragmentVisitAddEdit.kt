@@ -42,13 +42,19 @@ class FragmentVisitAddEdit : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
         })
     }
-
-    fun EditText.tryStore () {
+    
+    fun EditText.tryStore(tryToSaveVisitRecord: (String) -> Unit) {
         Log.d(TAG, "tryStore: starts")
-        saveVisit()
+        this.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                saveVisit()
+            }
 
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
+        })
     }
-
     private var visit: Visit? = null
 //    private var param2: String? = null
     private var listener: VisitHeaderInterface? = null
