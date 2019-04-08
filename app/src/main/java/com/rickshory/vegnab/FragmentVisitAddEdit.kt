@@ -43,7 +43,7 @@ class FragmentVisitAddEdit : Fragment() {
         })
     }
 
-    fun EditText.autoStore(tryToSaveVisitRecord: (String) -> Unit) {
+    fun EditText.autoStore(tryToSaveVisitRecord: () -> Unit) {
         Log.d(TAG, "autoStore: starts")
         this.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
