@@ -42,11 +42,12 @@ class FragmentVisitAddEdit : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
         })
     }
-    
-    fun EditText.tryStore(tryToSaveVisitRecord: (String) -> Unit) {
-        Log.d(TAG, "tryStore: starts")
+
+    fun EditText.autoStore(tryToSaveVisitRecord: (String) -> Unit) {
+        Log.d(TAG, "autoStore: starts")
         this.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
+                Log.d(TAG, "about to call saveVisit")
                 saveVisit()
             }
 
