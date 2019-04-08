@@ -93,6 +93,8 @@ class FragmentVisitAddEdit : Fragment() {
                 Log.d(TAG, "onViewCreated: no args, adding new rec")
             }
         }
+        vae_inp_name.autoStore()
+
     }
 
 
