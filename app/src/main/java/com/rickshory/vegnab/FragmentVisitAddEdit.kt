@@ -47,7 +47,7 @@ class FragmentVisitAddEdit : Fragment() {
         Log.d(TAG, "autoStore: starts")
         this.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                Log.d(TAG, "about to call saveVisit")
+                Log.d(TAG, "about to call saveVisit: $s")
                 saveVisit()
             }
 
