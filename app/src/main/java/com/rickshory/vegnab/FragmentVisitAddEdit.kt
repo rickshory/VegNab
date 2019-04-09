@@ -75,6 +75,7 @@ class FragmentVisitAddEdit : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Log.d(TAG, "onCreateView: starts")
+        val view = inflater.inflate(R.layout.fragment_visit_add_edit, container, false)
 
         //        vae_inp_name.autoStore()
         vae_inp_name.addTextChangedListener(vae_inp_name :TextWatcher {
@@ -87,7 +88,7 @@ class FragmentVisitAddEdit : Fragment() {
         })
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_visit_add_edit, container, false)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
