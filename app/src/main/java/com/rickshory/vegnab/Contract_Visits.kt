@@ -17,7 +17,7 @@ object Contract_Visits {
     // the fields
     object Columns {
         const val ID = BaseColumns._ID
-        const val VISIT_NAME = ""
+        const val VISIT_NAME = "VisitName"
         const val VISIT_LOCATION = "Location"
         const val VISIT_NOTES = "Notes"
     }

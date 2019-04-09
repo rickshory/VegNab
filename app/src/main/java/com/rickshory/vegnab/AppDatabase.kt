@@ -66,7 +66,7 @@ internal class AppDatabase private constructor(context: Context ):
         CHECK (LENGTH(${Contract_Namers.Columns.NAMERS_NAME})>=2)
         );
         """.replaceIndent(" ")
-        Log.d(TAG, "sSQL2: $sSQL")
+        Log.d(TAG, "sSQL: $sSQL")
         db.execSQL(sSQL)
 
 /*
@@ -128,7 +128,7 @@ FOREIGN KEY("AdditionalLocationsType") REFERENCES LocationTypes("_id")
         ${Contract_Visits.Columns.VISIT_NOTES} VARCHAR(255)
         );
         """.replaceIndent(" ")
-        Log.d(TAG, "sSQL2: $sSQL")
+        Log.d(TAG, "sSQL: $sSQL")
         db.execSQL(sSQL)
     }
 
