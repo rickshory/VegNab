@@ -75,19 +75,22 @@ class FragmentVisitAddEdit : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Log.d(TAG, "onCreateView: starts")
+        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_visit_add_edit, container, false)
 
         //        vae_inp_name.autoStore()
-        vae_inp_name.addTextChangedListener(vae_inp_name :TextWatcher {
+        vae_inp_name.addTextChangedListener(object :TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) { }
+            //override fun beforeTextChanged(s: Editable?) { }
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) { }
+            //override fun onTextChanged(s: Editable?) { }
             override fun afterTextChanged(s: Editable?) {
-                val content = s?.text.toString()
-                s?.error = if (content.length >= 6) null else "Minimum length = 6"
-            }
-            override fun beforeTextChanged(s: Editable?) { }
-            override fun onTextChanged(s: Editable?) { }
-        })
+                saveVisit()
+//                val content = s?.toString()
+//                s?.error = if (content.length >= 6) null else "Minimum length = 6"
 
-        // Inflate the layout for this fragment
+            }
+        })
         return view
     }
 
