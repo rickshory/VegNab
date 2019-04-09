@@ -94,18 +94,14 @@ class FragmentVisitAddEdit : Fragment() {
             }
         }
 //        vae_inp_name.autoStore()
-        vae_inp_name.addTextChangedListener(object :TextWatcher) {
-            
-        }
-        
-        /*field.addTextChangeListener(object: TextWatcher {
-  override fun afterTextChanged(s: Editable?) {
-    val content = s?.text.toString()
-    s?.error = if (content.length >= 6) null else "Minimum length = 6"
-  }
-  override fun beforeTextChanged(s: Editable?) { }
-  override fun onTextChanged(s: Editable?) { }
-})*/
+        vae_inp_name.addTextChangedListener(vae_inp_name :TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                val content = s?.text.toString()
+                s?.error = if (content.length >= 6) null else "Minimum length = 6"
+            }
+            override fun beforeTextChanged(s: Editable?) { }
+            override fun onTextChanged(s: Editable?) { }
+        })
 
     }
 
