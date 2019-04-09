@@ -93,7 +93,19 @@ class FragmentVisitAddEdit : Fragment() {
                 Log.d(TAG, "onViewCreated: no args, adding new rec")
             }
         }
-        vae_inp_name.autoStore()
+//        vae_inp_name.autoStore()
+        vae_inp_name.addTextChangedListener(object :TextWatcher) {
+            
+        }
+        
+        /*field.addTextChangeListener(object: TextWatcher {
+  override fun afterTextChanged(s: Editable?) {
+    val content = s?.text.toString()
+    s?.error = if (content.length >= 6) null else "Minimum length = 6"
+  }
+  override fun beforeTextChanged(s: Editable?) { }
+  override fun onTextChanged(s: Editable?) { }
+})*/
 
     }
 
@@ -188,6 +200,10 @@ class FragmentVisitAddEdit : Fragment() {
                 }
             }
     }
+}
+
+private fun EditText.addTextChangedListener(textWatcher: TextWatcher, function: () -> Unit) {
+
 }
 
 fun createFrag(visit: Visit) {
