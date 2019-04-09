@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
+import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
 
 private const val TAG = "FragmentVisitAddEdit"
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -79,7 +80,7 @@ class FragmentVisitAddEdit : Fragment() {
         val view = inflater.inflate(R.layout.fragment_visit_add_edit, container, false)
 
         //        vae_inp_name.autoStore()
-        vae_inp_name.addTextChangedListener(object :TextWatcher {
+        view.vae_inp_name.addTextChangedListener(object :TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) { }
             //override fun beforeTextChanged(s: Editable?) { }
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) { }
