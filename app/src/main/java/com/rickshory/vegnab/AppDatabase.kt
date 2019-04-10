@@ -122,8 +122,8 @@ FOREIGN KEY("AdditionalLocationsType") REFERENCES LocationTypes("_id")
         sSQL = """
         CREATE TABLE ${Contract_Visits.TABLE_NAME} (
         ${Contract_Visits.Columns.ID} INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-        ${Contract_Visits.Columns.VISIT_NAME} VARCHAR(16) NOT NULL
-        CHECK (LENGTH(${Contract_Visits.Columns.VISIT_NAME})>=2),
+        ${Contract_Visits.Columns.VISIT_NAME} VARCHAR(${Contract_Visits.Settings.VISIT_NAME_MAX_LENGTH}) NOT NULL
+        CHECK (LENGTH(${Contract_Visits.Columns.VISIT_NAME})>=${Contract_Visits.Settings.VISIT_NAME_MIN_LENGTH}),
         ${Contract_Visits.Columns.VISIT_LOCATION} VARCHAR(50) NOT NULL,
         ${Contract_Visits.Columns.VISIT_NOTES} VARCHAR(255)
         );

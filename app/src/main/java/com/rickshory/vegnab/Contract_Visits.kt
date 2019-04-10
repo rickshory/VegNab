@@ -22,6 +22,11 @@ object Contract_Visits {
         const val VISIT_NOTES = "Notes"
     }
 
+    object Settings {
+        const val VISIT_NAME_MIN_LENGTH = 2
+        const val VISIT_NAME_MAX_LENGTH = 16
+    }
+
     fun getID(uri: Uri): Long {
         return ContentUris.parseId(uri)
     }
