@@ -126,10 +126,10 @@ class FragmentVisitAddEdit : Fragment() {
                     if (vae_inp_notes.text.isNotEmpty()) {
                         values.put(Contract_Visits.Columns.VISIT_NOTES, vae_inp_notes.text.toString())
                     }
-                }
-                // put defaults, such as timestamps, here
-                Log.d(TAG, "saveVisit: creating new record")
-                activity?.contentResolver?.insert(Contract_Visits.CONTENT_URI, values)
+                    // put defaults, such as timestamps, here
+                    Log.d(TAG, "saveVisit: creating new record")
+                    activity?.contentResolver?.insert(Contract_Visits.CONTENT_URI, values)
+                } // end of validation
             }
         } else {
             Log.d(TAG, "saveVisit: updating existing visit")
