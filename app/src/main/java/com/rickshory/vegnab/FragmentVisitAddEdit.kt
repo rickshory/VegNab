@@ -30,7 +30,8 @@ private const val ARG_VISIT = "visit"
  * create an instance of this fragment.
  *
  */
-class FragmentVisitAddEdit : Fragment() {
+class FragmentVisitAddEdit : Fragment(),
+    android.view.View.OnFocusChangeListener {
 
     fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
         this.addTextChangedListener(object: TextWatcher {
@@ -111,7 +112,15 @@ class FragmentVisitAddEdit : Fragment() {
         }
     }
 
-
+    /**
+     * Called when the focus state of a view has changed.
+     *
+     * @param v The view whose state has changed.
+     * @param hasFocus The new focus state of v.
+     */
+    override fun onFocusChange(v: View?, hasFocus: Boolean) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
     private fun saveVisit() {
         // update record if at least one field has changed
         val values = ContentValues()
