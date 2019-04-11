@@ -131,6 +131,9 @@ class FragmentVisitAddEdit : Fragment(),
                 vae_inp_notes.id -> {
 
                 }
+                else -> {
+                    // may not need this
+                }
             }
         }
     }
