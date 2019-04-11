@@ -120,7 +120,18 @@ class FragmentVisitAddEdit : Fragment(),
      */
     override fun onFocusChange(v: View?, hasFocus: Boolean) {
         if (!hasFocus) { // something lost focus
+//            val values = ContentValues() // use later
+            when (v?.id) {
+                vae_inp_name.id -> {
 
+                }
+                vae_inp_location.id -> {
+
+                }
+                vae_inp_notes.id -> {
+
+                }
+            }
         }
     }
     private fun saveVisit() {
