@@ -119,7 +119,9 @@ class FragmentVisitAddEdit : Fragment(),
      * @param hasFocus The new focus state of v.
      */
     override fun onFocusChange(v: View?, hasFocus: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if (!hasFocus) { // something lost focus
+
+        }
     }
     private fun saveVisit() {
         // update record if at least one field has changed
