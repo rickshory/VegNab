@@ -32,7 +32,7 @@ private const val ARG_VISIT = "visit"
  */
 class FragmentVisitAddEdit : Fragment(),
     android.view.View.OnFocusChangeListener {
-    
+
     private var visit: Visit? = null
 //    private var param2: String? = null
     private var listener: VisitHeaderInterface? = null
@@ -100,7 +100,7 @@ class FragmentVisitAddEdit : Fragment(),
                 vae_inp_name.id,
                 vae_inp_location.id,
                 vae_inp_notes.id -> {
-
+                    saveVisit()
                 }
             }
         }
