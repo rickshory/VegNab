@@ -62,7 +62,7 @@ class FragmentVisitAddEdit : Fragment(),
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) { }
             //override fun onTextChanged(s: Editable?) { }
             override fun afterTextChanged(s: Editable?) {
-                saveVisit()
+//                saveVisit()
 //                val content = s?.toString()
 //                s?.error = if (content.length >= 6) null else "Minimum length = 6"
 
