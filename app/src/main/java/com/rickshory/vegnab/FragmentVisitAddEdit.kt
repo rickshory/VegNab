@@ -99,11 +99,13 @@ class FragmentVisitAddEdit : Fragment(),
      */
     override fun onFocusChange(v: View?, hasFocus: Boolean) {
         if (!hasFocus) { // something lost focus
+            Log.d(TAG, "onFocusChange, something lost focus")
 //            val values = ContentValues() // use later
             when (v?.id) { // when any EditText loses focus
                 vae_inp_name.id,
                 vae_inp_location.id,
                 vae_inp_notes.id -> {
+                    Log.d(TAG, "after FocusChange, about to try saveVisit")
                     saveVisit()
                 }
             }
