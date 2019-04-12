@@ -32,20 +32,7 @@ private const val ARG_VISIT = "visit"
  */
 class FragmentVisitAddEdit : Fragment(),
     android.view.View.OnFocusChangeListener {
-
-    fun EditText.autoStore(tryToSaveVisitRecord: () -> Unit) {
-        Log.d(TAG, "autoStore: starts")
-        this.addTextChangedListener(object: TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                Log.d(TAG, "about to call saveVisit: $s")
-                saveVisit()
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
-        })
-    }
+    
     private var visit: Visit? = null
 //    private var param2: String? = null
     private var listener: VisitHeaderInterface? = null
