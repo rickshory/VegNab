@@ -55,6 +55,10 @@ class FragmentVisitAddEdit : Fragment(),
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_visit_add_edit, container, false)
 
+        view.vae_inp_name.setOnFocusChangeListener(this)
+        view.vae_inp_notes.setOnFocusChangeListener(this)
+        view.vae_inp_location.setOnFocusChangeListener(this)
+
         //        vae_inp_name.autoStore()
         view.vae_inp_name.addTextChangedListener(object :TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) { }
