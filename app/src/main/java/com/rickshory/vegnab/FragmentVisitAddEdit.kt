@@ -206,10 +206,6 @@ class FragmentVisitAddEdit : Fragment(),
     }
 }
 
-private fun EditText.addTextChangedListener(textWatcher: TextWatcher, function: () -> Unit) {
-
-}
-
 fun createFrag(visit: Visit) {
     val fragment = FragmentVisitAddEdit.newInstance(visit)
 }
