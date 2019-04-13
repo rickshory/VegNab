@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.extensions.LayoutContainer
 
-class VisitViewHolder(val containerView: View) :
-    RecyclerView.ViewHolder(containerView) {
-        var name: TextView = containerView.findViewById(R.id.vli_name)
+class VisitViewHolder(override val containerView: View) :
+    RecyclerView.ViewHolder(containerView),
+    LayoutContainer{
 
 }
 
