@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class VisitViewHolder(val containerView: View) :
-    RecyclerView.ViewHolder{containerView} {
+    RecyclerView.ViewHolder(containerView) {
         var name: TextView = containerView.findViewById(R.id.vli_name)
 
 }
