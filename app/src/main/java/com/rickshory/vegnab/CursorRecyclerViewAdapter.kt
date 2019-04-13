@@ -16,6 +16,7 @@ private const val TAG = "CursorRVAdapt"
 
 class CursorRecyclerViewAdapter(private var cursor: Cursor?):
     RecyclerView.Adapter<VisitViewHolder>() {
+
     /**
      * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
      * an item.
@@ -44,15 +45,6 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?):
     }
 
     /**
-     * Returns the total number of items in the data set held by the adapter.
-     *
-     * @return The total number of items in this adapter.
-     */
-    override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    /**
      * Called by RecyclerView to display the data at the specified position. This method should
      * update the contents of the [ViewHolder.itemView] to reflect the item at the given
      * position.
@@ -74,6 +66,15 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?):
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: VisitViewHolder, position: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    /**
+     * Returns the total number of items in the data set held by the adapter.
+     *
+     * @return The total number of items in this adapter.
+     */
+    override fun getItemCount(): Int {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
