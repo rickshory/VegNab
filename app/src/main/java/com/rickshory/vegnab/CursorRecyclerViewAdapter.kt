@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.fragment_visits.*
+import kotlinx.android.synthetic.main.visit_list_item.*
 
 class VisitViewHolder(override val containerView: View) :
     RecyclerView.ViewHolder(containerView),
@@ -63,7 +65,15 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?):
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: VisitViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG,"onBindViewHolder: starts")
+        val cursor = cursor // avoid problems with smart cast
+        if (cursor ==  null || cursor.count == 0) {
+            Log.d(TAG,"onBindViewHolder: give message if empty")
+            holder.vli_name.setText("No items yet")
+            holder.vli_date_notes.setText("")
+            holder.vli_export.visibility = View.GONE
+            holder.vli_hide_visit.visibility = View.GONE
+        } else {}
     }
 
     /**

@@ -30,7 +30,7 @@
         android:textColor="@color/design_default_color_secondary"
         app:layout_constraintEnd_toStartOf="@+id/vli_export"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vli_code"
+        app:layout_constraintTop_toBottomOf="@+id/vli_name"
         tools:text="2019-02-23, Place in the sun" />
 
     <ImageButton
