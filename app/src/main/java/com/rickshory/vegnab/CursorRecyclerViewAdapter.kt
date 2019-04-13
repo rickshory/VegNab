@@ -1,6 +1,7 @@
 package com.rickshory.vegnab
 
 import android.database.Cursor
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -41,7 +42,7 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?):
      * @see .onBindViewHolder
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VisitViewHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG,"onCreateViewHolder: new View requested")
     }
 
     /**
