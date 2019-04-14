@@ -76,9 +76,18 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?):
         } else {
             if (!cursor.moveToPosition(position)) {
                 throw IllegalStateException("Could not move cursor to position $position")
-            } else {
-
             }
+            // Create a Visit opject from the data in the cursor
+            val visit = Visit(
+                cursor.getString(cursor.getColumnIndex(Contract_Visits.Columns.VISIT_NAME)),
+                cursor.getString(cursor.getColumnIndex(Contract_Visits.Columns.VISIT_NOTES)),
+                cursor.getString(cursor.getColumnIndex(Contract_Visits.Columns.VISIT_LOCATION))
+            )
+                // ID is not set in the constructor
+            visit.id = cursor.getLong(cursor.getColumnIndex(Contract_Visits.Columns.ID))
+            holder.vli_name.text = visit.name
+            holder.vli_date_notes.text = visit.notes // change this later to included datestamp
+//            holder.vli_location.text = visit.location // probably won't use here
         }
     }
 
