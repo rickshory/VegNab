@@ -88,7 +88,10 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?):
             holder.vli_name.text = visit.name
             holder.vli_date_notes.text = visit.notes // change this later to included datestamp
 //            holder.vli_location.text = visit.location // probably won't use here
+            holder.vli_export.visibility = View.VISIBLE
+            holder.vli_hide_visit.visibility = View.VISIBLE
         }
+        TODO("Add long-press options, is this the correct place?")
     }
 
     /**
