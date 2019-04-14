@@ -17,9 +17,9 @@ class VisitViewHolder(override val containerView: View) :
 
 }
 
-private const val TAG = "CursorRVAdapt"
+private const val TAG = "VisitRVCursorAdapt"
 
-class CursorRecyclerViewAdapter(private var cursor: Cursor?):
+class VisitRecyclerViewCursorAdapter(private var cursor: Cursor?):
     RecyclerView.Adapter<VisitViewHolder>() {
 
     /**
