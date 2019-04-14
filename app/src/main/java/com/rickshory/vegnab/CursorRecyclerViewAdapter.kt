@@ -73,7 +73,13 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?):
             holder.vli_date_notes.setText("")
             holder.vli_export.visibility = View.GONE
             holder.vli_hide_visit.visibility = View.GONE
-        } else {}
+        } else {
+            if (!cursor.moveToPosition(position)) {
+                throw IllegalStateException("Could not move cursor to position $position")
+            } else {
+
+            }
+        }
     }
 
     /**
