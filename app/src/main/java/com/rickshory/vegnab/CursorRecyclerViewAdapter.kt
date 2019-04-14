@@ -70,7 +70,7 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?):
         if (cursor ==  null || cursor.count == 0) {
             Log.d(TAG,"onBindViewHolder: give message if empty")
             holder.vli_name.setText("No items yet")
-            holder.vli_date_notes.setText("")
+            holder.vli_date_notes.setText("To start a visit, choose the Project and Plot Type")
             holder.vli_export.visibility = View.GONE
             holder.vli_hide_visit.visibility = View.GONE
         } else {
