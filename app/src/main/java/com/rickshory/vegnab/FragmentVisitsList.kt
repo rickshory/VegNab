@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_visits.*
 
@@ -23,6 +24,10 @@ private const val TAG = "FragmentVisitsList"
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_VIS_LIST_OPTS = "visListOpts"
 
+private lateinit var recyclerView: RecyclerView
+private lateinit var viewAdapter: RecyclerView.Adapter<*>
+private lateinit var viewManager: RecyclerView.LayoutManager
+
 class FragmentVisitsList : Fragment() {
     private var visitsListOpts: VisitsListOpts? = null
     //    private var param2: String? = null
@@ -36,6 +41,7 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
+        
     }
 
     override fun onCreateView(
