@@ -14,7 +14,11 @@ import kotlinx.android.synthetic.main.visit_list_item.*
 class VisitViewHolder(override val containerView: View) :
     RecyclerView.ViewHolder(containerView),
     LayoutContainer{
-
+    init { // is this correct?
+        // Define click listener for the ViewHolder's View.
+        containerView.setOnClickListener { Log.d(TAG, "Element $adapterPosition clicked.") }
+//        textView = containerView.findViewById(R.id.textView)
+    }
 }
 
 private const val TAG = "VisitRVCursorAdapt"
