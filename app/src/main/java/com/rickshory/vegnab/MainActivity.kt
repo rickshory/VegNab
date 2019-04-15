@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.rickshory.vegnab.models.Visit
+import com.rickshory.vegnab.ui.FragmentVisitAddEdit
 import com.rickshory.vegnab.ui.FragmentVisitsList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*

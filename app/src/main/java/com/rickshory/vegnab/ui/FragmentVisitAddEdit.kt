@@ -1,4 +1,4 @@
-package com.rickshory.vegnab
+package com.rickshory.vegnab.ui
 
 import android.content.ContentValues
 import android.content.Context
@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.rickshory.vegnab.R
 import com.rickshory.vegnab.contracts.Contract_Visits
 import com.rickshory.vegnab.models.Visit
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
