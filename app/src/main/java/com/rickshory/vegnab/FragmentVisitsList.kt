@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_visits.*
  * Use the [FragmentVisitsList.newInstance] factory method to
  * create an instance of this fragment.
  */
-private const val TAG = "FragmentVisitsList"
+
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_VIS_LIST_OPTS = "visListOpts"
 
@@ -29,6 +29,7 @@ private lateinit var viewAdapter: RecyclerView.Adapter<*>
 private lateinit var viewManager: RecyclerView.LayoutManager
 
 class FragmentVisitsList : Fragment() {
+    private val TAG = this::class.java.simpleName
     private var visitsListOpts: VisitsListOpts? = null
     //    private var param2: String? = null
     private var listener: VisitsListInterface? = null
@@ -41,7 +42,7 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
-        
+
     }
 
     override fun onCreateView(
