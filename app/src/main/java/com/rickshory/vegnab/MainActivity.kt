@@ -12,12 +12,13 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity(),
     FragmentVisitsList.VisitsListInterface,
     FragmentVisitAddEdit.VisitHeaderInterface,
     NavigationView.OnNavigationItemSelectedListener {
-
+    companion object {
+        private val TAG = this::class.java.simpleName
+    }
     private var isLandscape = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
