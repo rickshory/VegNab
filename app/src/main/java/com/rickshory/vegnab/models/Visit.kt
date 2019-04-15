@@ -1,4 +1,4 @@
-package com.rickshory.vegnab
+package com.rickshory.vegnab.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

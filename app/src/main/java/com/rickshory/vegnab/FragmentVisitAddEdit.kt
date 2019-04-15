@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.rickshory.vegnab.contracts.Contract_Visits
+import com.rickshory.vegnab.models.Visit
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
 

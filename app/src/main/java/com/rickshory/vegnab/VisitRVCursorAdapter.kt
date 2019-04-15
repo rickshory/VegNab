@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rickshory.vegnab.contracts.Contract_Visits
+import com.rickshory.vegnab.models.Visit
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.visit_list_item.*
 import kotlinx.android.synthetic.main.visit_list_item.view.*

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.rickshory.vegnab.Visit
+import com.rickshory.vegnab.models.Visit
 
 class VisitDetailViewModel : ViewModel() {
     companion object {
