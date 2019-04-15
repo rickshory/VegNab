@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
+import com.rickshory.vegnab.contracts.Contract_Visits
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
 
@@ -143,7 +143,8 @@ class FragmentVisitAddEdit : Fragment(),
             }
             if (values.size() != 0) {
                 Log.d(TAG, "saveVisit: updating record")
-                activity?.contentResolver?.update(Contract_Visits.buildUriFromId(visit.id),
+                activity?.contentResolver?.update(
+                    Contract_Visits.buildUriFromId(visit.id),
                     values, null, null)
             }
         }

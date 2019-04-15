@@ -10,6 +10,7 @@ import android.net.Uri
 import android.util.Log
 import com.rickshory.vegnab.contracts.Contract_Namers
 import com.rickshory.vegnab.contracts.Contract_Projects
+import com.rickshory.vegnab.contracts.Contract_Visits
 
 /**
  * Provider for the VegNab app
