@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.rickshory.vegnab.contracts.Contract_Namers
+import com.rickshory.vegnab.contracts.Contract_Projects
 import java.lang.IllegalStateException
 
 /**
