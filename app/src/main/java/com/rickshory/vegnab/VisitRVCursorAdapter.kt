@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.fragment_visits.*
 import kotlinx.android.synthetic.main.visit_list_item.*
+import kotlinx.android.synthetic.main.visit_list_item.view.*
 
 class VisitViewHolder(override val containerView: View) :
     RecyclerView.ViewHolder(containerView),
@@ -19,6 +20,12 @@ class VisitViewHolder(override val containerView: View) :
         containerView.setOnClickListener { Log.d(TAG, "Element $adapterPosition clicked.") }
 //        textView = containerView.findViewById(R.id.textView)
     }
+    var visit: Visit? = null
+        set(value) { // custom setter
+            field = value // backing field
+            containerView.vli_name.text = value?.name
+            containerView.vli_date_notes.text = value?.notes // fix later to include DateStamp
+        }
 }
 
 private const val TAG = "VisitRVCursorAdapt"
