@@ -8,6 +8,7 @@ import android.database.SQLException
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.util.Log
+import com.rickshory.vegnab.contracts.Contract_Namers
 
 /**
  * Provider for the VegNab app
