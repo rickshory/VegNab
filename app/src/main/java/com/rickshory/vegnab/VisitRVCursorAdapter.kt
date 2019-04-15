@@ -109,6 +109,8 @@ class VisitRVCursorAdapter(private var cursor: Cursor?):
             holder.vli_hide_visit.visibility = View.VISIBLE
         }
         TODO("Add long-press options, is this the correct place?")
+//        holder.visit = items[position]
+//        holder.containerView.setOnClickListener { onClick(items[position]) }
     }
 
     /**
