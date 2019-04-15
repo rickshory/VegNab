@@ -1,4 +1,4 @@
-package com.rickshory.vegnab
+package com.rickshory.vegnab.ui
 
 import android.content.Context
 import androidx.fragment.app.Fragment
@@ -9,7 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
+import com.rickshory.vegnab.R
+import com.rickshory.vegnab.VisitsListOpts
 import kotlinx.android.synthetic.main.fragment_visits.*
 
 /**
