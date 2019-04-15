@@ -26,6 +26,12 @@ private const val TAG = "VisitRVCursorAdapt"
 class VisitRVCursorAdapter(private var cursor: Cursor?):
     RecyclerView.Adapter<VisitViewHolder>() {
 
+    var items: List<Visit> = emptyList()
+
+    fun loadItems(newItems: List<Visit>) {
+        items = newItems
+    }
+
     /**
      * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
      * an item.
