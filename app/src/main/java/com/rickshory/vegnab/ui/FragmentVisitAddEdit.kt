@@ -20,10 +20,7 @@ import com.rickshory.vegnab.viewmodels.VisitDetailViewModel
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
 
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_VISIT = "visit"
-//private const val ARG_PARAM1 = "param1"
-//private const val ARG_PARAM2 = "param2"
+
 
 
 /**
@@ -40,6 +37,11 @@ class FragmentVisitAddEdit : Fragment(),
 
     companion object {
         private val TAG = this::class.java.simpleName
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+//private const val ARG_PARAM1 = "param1"
+//private const val ARG_PARAM2 = "param2"
+
+        val ARG_VISIT = "visit"
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -56,7 +58,7 @@ class FragmentVisitAddEdit : Fragment(),
                 }
             }
     }
-    
+
     private lateinit var visViewModel : VisitDetailViewModel
     private var visit: Visit? = null
 //    private var param2: String? = null
