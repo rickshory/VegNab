@@ -10,9 +10,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.rickshory.vegnab.R
 import com.rickshory.vegnab.contracts.Contract_Visits
+import com.rickshory.vegnab.extensions.set
 import com.rickshory.vegnab.models.Visit
+import com.rickshory.vegnab.viewmodels.VisitDetailViewModel
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
 
@@ -34,6 +38,7 @@ private const val ARG_VISIT = "visit"
 class FragmentVisitAddEdit : Fragment(),
     android.view.View.OnFocusChangeListener {
     private val TAG = this::class.java.simpleName
+    private lateinit var visViewModel : VisitDetailViewModel
     private var visit: Visit? = null
 //    private var param2: String? = null
     private var listener: VisitHeaderInterface? = null
@@ -46,6 +51,23 @@ class FragmentVisitAddEdit : Fragment(),
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
+
+//        setContentView(R.layout.fragment_visit_add_edit)
+        visViewModel = ViewModelProviders.of(this).get(VisitDetailViewModel::class.java)
+
+        // set the Visit we want to edit
+        visViewModel.setVisitId(0)
+
+        // observe visViewModel for changes to the Visit
+        visViewModel.currentVisit.observe(this, Observer {
+            Log.d(TAG, "loading Visit via Observer")
+            it?.let {
+                vae_inp_name.text.set(it.name)
+            }
+        }
+
+        )
+
     }
 
     override fun onCreateView(
@@ -184,7 +206,6 @@ class FragmentVisitAddEdit : Fragment(),
      * for more information.
      */
     interface VisitHeaderInterface {
-        // TODO: Update argument type and name
 //        fun onGoClicked(uri: Uri)
         fun visHeaderOnGoClicked()
     }
