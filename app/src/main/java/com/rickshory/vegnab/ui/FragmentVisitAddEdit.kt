@@ -63,11 +63,10 @@ class FragmentVisitAddEdit : Fragment(),
             Log.d(TAG, "loading Visit via Observer")
             it?.let {
                 vae_inp_name.text.set(it.name)
+                vae_inp_notes.text.set(it.notes)
+                vae_inp_location.text.set(it.location)
             }
-        }
-
-        )
-
+        })
     }
 
     override fun onCreateView(
