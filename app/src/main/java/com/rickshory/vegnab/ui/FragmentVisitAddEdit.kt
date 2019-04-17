@@ -14,7 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.rickshory.vegnab.R
 import com.rickshory.vegnab.contracts.Contract_Visits
-import com.rickshory.vegnab.extensions.set
+import com.rickshory.vegnab.extensions.*
 import com.rickshory.vegnab.models.Visit
 import com.rickshory.vegnab.viewmodels.VisitDetailViewModel
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
@@ -92,6 +92,9 @@ class FragmentVisitAddEdit : Fragment(),
         view.vae_inp_name.setOnFocusChangeListener(this)
         view.vae_inp_notes.setOnFocusChangeListener(this)
         view.vae_inp_location.setOnFocusChangeListener(this)
+
+//        // to save continually (example)
+//        view.vae_inp_name.afterTextChanged { saveVisit() }
 
         // observe visViewModel for changes to the Visit
         visViewModel.currentVisit.observe(this, Observer {
