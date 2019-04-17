@@ -81,19 +81,7 @@ class FragmentVisitAddEdit : Fragment(),
         view.vae_inp_notes.setOnFocusChangeListener(this)
         view.vae_inp_location.setOnFocusChangeListener(this)
 
-        //        vae_inp_name.autoStore()
-        view.vae_inp_name.addTextChangedListener(object :TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) { }
-            //override fun beforeTextChanged(s: Editable?) { }
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) { }
-            //override fun onTextChanged(s: Editable?) { }
-            override fun afterTextChanged(s: Editable?) {
-//                saveVisit()
-//                val content = s?.toString()
-//                s?.error = if (content.length >= 6) null else "Minimum length = 6"
 
-            }
-        })
         return view
     }
 
