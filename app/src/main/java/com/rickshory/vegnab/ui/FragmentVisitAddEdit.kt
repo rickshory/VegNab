@@ -16,7 +16,6 @@ import com.rickshory.vegnab.models.Visit
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
 
-private const val TAG = "FragmentVisitAddEdit"
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_VISIT = "visit"
 //private const val ARG_PARAM1 = "param1"
@@ -34,7 +33,7 @@ private const val ARG_VISIT = "visit"
  */
 class FragmentVisitAddEdit : Fragment(),
     android.view.View.OnFocusChangeListener {
-
+    private val TAG = this::class.java.simpleName
     private var visit: Visit? = null
 //    private var param2: String? = null
     private var listener: VisitHeaderInterface? = null
