@@ -58,15 +58,6 @@ class FragmentVisitAddEdit : Fragment(),
         // set the Visit we want to edit
         visViewModel.setVisitId(0)
 
-        // observe visViewModel for changes to the Visit
-        visViewModel.currentVisit.observe(this, Observer {
-            Log.d(TAG, "loading Visit via Observer")
-            it?.let {
-                vae_inp_name.text.set(it.name)
-                vae_inp_notes.text.set(it.notes)
-                vae_inp_location.text.set(it.location)
-            }
-        })
     }
 
     override fun onCreateView(
@@ -81,6 +72,15 @@ class FragmentVisitAddEdit : Fragment(),
         view.vae_inp_notes.setOnFocusChangeListener(this)
         view.vae_inp_location.setOnFocusChangeListener(this)
 
+        // observe visViewModel for changes to the Visit
+        visViewModel.currentVisit.observe(this, Observer {
+            Log.d(TAG, "loading Visit via Observer")
+            it?.let {
+                view.vae_inp_name.text.set(it.name)
+                view.vae_inp_notes.text.set(it.notes)
+                view.vae_inp_location.text.set(it.location)
+            }
+        })
 
         return view
     }
