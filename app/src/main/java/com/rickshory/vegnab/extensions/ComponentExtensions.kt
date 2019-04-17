@@ -5,8 +5,10 @@ import android.text.TextWatcher
 import android.widget.EditText
 
 fun Editable.set(content: String) {
-    clear()
-    append(content)
+    if (toString() != content) { // only do if changed
+        clear()
+        append(content)
+    }
 }
 
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
