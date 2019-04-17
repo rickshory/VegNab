@@ -37,7 +37,26 @@ private const val ARG_VISIT = "visit"
  */
 class FragmentVisitAddEdit : Fragment(),
     android.view.View.OnFocusChangeListener {
-    private val TAG = this::class.java.simpleName
+
+    companion object {
+        private val TAG = this::class.java.simpleName
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param visit The visit to edit, or null to add a new visit
+         * @return A new instance of fragment FragmentVisitAddEdit.
+         */
+        @JvmStatic
+        fun newInstance(visit: Visit?) =
+            FragmentVisitAddEdit().apply {
+                arguments = Bundle().apply {
+                    putParcelable(ARG_VISIT, visit)
+//                    putString(ARG_PARAM2, param2)
+                }
+            }
+    }
+    
     private lateinit var visViewModel : VisitDetailViewModel
     private var visit: Visit? = null
 //    private var param2: String? = null
@@ -197,23 +216,6 @@ class FragmentVisitAddEdit : Fragment(),
         fun visHeaderOnGoClicked()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param visit The visit to edit, or null to add a new visit
-         * @return A new instance of fragment FragmentVisitAddEdit.
-         */
-        @JvmStatic
-        fun newInstance(visit: Visit?) =
-            FragmentVisitAddEdit().apply {
-                arguments = Bundle().apply {
-                    putParcelable(ARG_VISIT, visit)
-//                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }
 
 fun createFrag(visit: Visit) {
