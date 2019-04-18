@@ -1,5 +1,6 @@
 package com.rickshory.vegnab.repositories
 
+import android.util.Log
 import com.rickshory.vegnab.models.Visit
 
 class MockVisitsRepository : VisitsRepository {
@@ -11,11 +12,10 @@ class MockVisitsRepository : VisitsRepository {
 
     private val visits: MutableMap<Long, Visit> = HashMap()
 
-    override fun getVisitById(visitId: Long): Visit {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getVisitById(visitId: Long): Visit? = visits[visitId]
 
     override fun saveVisit(item: Visit) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d(TAG, "saving Visit ${item.id}")
+        visits[item.id] = item
     }
 }
