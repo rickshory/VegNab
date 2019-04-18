@@ -6,31 +6,29 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.rickshory.vegnab.models.Visit
+import com.rickshory.vegnab.repositories.MockVisitsRepository
 
 class VisitDetailViewModel : ViewModel() {
     companion object {
         private val TAG = this::class.java.simpleName
     }
 
-
     private val mutableVisitId: MutableLiveData<Long?> = MutableLiveData()
+    private val repository = MockVisitsRepository.instance
     val currentVisit: LiveData<Visit>
-
 
     init {
         currentVisit = Transformations.switchMap(mutableVisitId, { loadVisit(it!!) })
     }
 
-
     private fun loadVisit(visitId: Long): LiveData<Visit> {
         Log.d(TAG, "Loading visit")
-        val visit = Visit("visit name", "visit notes", "visit location").apply {
-            id = 0
-        }
+        var newVisit = Visit("visit name", "visit notes", "visit location").apply {
+            id = 0}
+        val visit: Visit = if (visitId == null) newVisit else repository.getVisitById(visitId) ?: newVisit
         return MutableLiveData<Visit>().apply { postValue(visit) }
     }
-
-
+    
     fun setVisitId(id: Long) {
         Log.d(TAG, "VisitDetail of $id requested")
         mutableVisitId.postValue(id)
