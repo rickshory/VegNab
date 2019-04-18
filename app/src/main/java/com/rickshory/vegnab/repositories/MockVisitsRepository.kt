@@ -8,7 +8,9 @@ class MockVisitsRepository : VisitsRepository {
         private val TAG = this::class.java.simpleName
         val instance = MockVisitsRepository()
     }
-    
+
+    private val visits: MutableMap<Long, Visit> = HashMap()
+
     override fun getVisitById(visitId: Long): Visit {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
