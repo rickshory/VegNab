@@ -28,15 +28,16 @@ class VisitDetailViewModel : ViewModel() {
         val visit: Visit = if (visitId == null) newVisit else repository.getVisitById(visitId) ?: newVisit
         return MutableLiveData<Visit>().apply { postValue(visit) }
     }
-    
+
     fun setVisitId(id: Long) {
         Log.d(TAG, "VisitDetail of $id requested")
         mutableVisitId.postValue(id)
     }
-
-
+    
     fun saveVisit(item: Visit) {
         Log.d(TAG, "Saving visit ${item.id}")
+        repository.saveVisit(item)
+        setVisitId(item.id)
     }
 }
 
