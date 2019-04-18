@@ -33,11 +33,11 @@ class VisitDetailViewModel : ViewModel() {
         Log.d(TAG, "VisitDetail of $id requested")
         mutableVisitId.postValue(id)
     }
-    
+
     fun saveVisit(item: Visit) {
         Log.d(TAG, "Saving visit ${item.id}")
         repository.saveVisit(item)
-        setVisitId(item.id)
+        if (mutableVisitId.value != item.id) setVisitId(item.id)
     }
 }
 
