@@ -19,6 +19,7 @@ import com.rickshory.vegnab.models.Visit
 import com.rickshory.vegnab.viewmodels.VisitDetailViewModel
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
+import org.koin.android.architecture.ext.viewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -56,10 +57,11 @@ class VisitDetailFragment : Fragment(),
             }
     }
 
-    private lateinit var visViewModel : VisitDetailViewModel
+    private val visViewModel by viewModel<VisitDetailViewModel>()
     private var visit: Visit? = null
 //    private var param2: String? = null
     private var listener: VisitHeaderInterface? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate: starts")
@@ -71,7 +73,11 @@ class VisitDetailFragment : Fragment(),
 //        }
 
 //        setContentView(R.layout.fragment_visit_add_edit)
-        visViewModel = ViewModelProviders.of(this).get(VisitDetailViewModel::class.java)
+
+        arguments?.let {
+            if (it.containsKey(ARG_VISIT))
+                visViewModel.setVisitId(it.getLong(ARG_VISIT))
+        }
 
         // set the Visit we want to edit
         visViewModel.setVisitId(0)
