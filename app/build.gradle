@@ -51,4 +51,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0-alpha03'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha03'
 
+    // Dependancy Injection
+    implementation "org.koin:koin-android:$koin_version"
+
 }
