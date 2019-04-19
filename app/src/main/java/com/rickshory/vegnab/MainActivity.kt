@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity(),
         }
     }
 
-    private fun showVisitAddEditFragment(visit: Visit?) {
+    private fun showVisitDetailFragment(visit: Visit?) {
         val frag = FragmentVisitAddEdit.newInstance(visit)
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, frag, Tags.Fragments.VISIT_HEADER)
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun visitsListOnGoClicked() {
-        showVisitAddEditFragment(null)
+        showVisitDetailFragment(null)
     }
 
     override fun visHeaderOnGoClicked() {
