@@ -5,6 +5,7 @@ import com.rickshory.vegnab.repositories.MockVisitsRepository
 import com.rickshory.vegnab.repositories.VisitsRepository
 import com.rickshory.vegnab.viewmodels.VisitDetailViewModel
 import org.koin.android.architecture.ext.viewModel
+import org.koin.android.ext.android.startKoin
 import org.koin.dsl.module.Module
 import org.koin.dsl.module.applicationContext
 
@@ -17,5 +18,6 @@ class ApplicationWrapper : Application() {
     }
     override fun onCreate() {
         super.onCreate()
+        startKoin(listOf(modules))
     }
 }
