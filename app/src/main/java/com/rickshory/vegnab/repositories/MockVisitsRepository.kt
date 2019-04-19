@@ -7,7 +7,6 @@ class MockVisitsRepository : VisitsRepository {
 
     companion object {
         private val TAG = this::class.java.simpleName
-        val instance = MockVisitsRepository()
     }
 
     private val visits: MutableMap<Long, Visit> = HashMap()
