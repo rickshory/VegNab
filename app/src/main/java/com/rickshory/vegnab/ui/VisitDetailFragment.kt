@@ -20,9 +20,6 @@ import com.rickshory.vegnab.viewmodels.VisitDetailViewModel
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.*
 import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
 
-
-
-
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
