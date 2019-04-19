@@ -7,14 +7,15 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.rickshory.vegnab.models.Visit
 import com.rickshory.vegnab.repositories.MockVisitsRepository
+import com.rickshory.vegnab.repositories.VisitsRepository
 
-class VisitDetailViewModel : ViewModel() {
+class VisitDetailViewModel(private val repository: VisitsRepository) : ViewModel() {
     companion object {
         private val TAG = this::class.java.simpleName
     }
 
     private val mutableVisitId: MutableLiveData<Long?> = MutableLiveData()
-    private val repository = MockVisitsRepository.instance
+
     val currentVisit: LiveData<Visit>
 
     init {
