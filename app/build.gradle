@@ -52,8 +52,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha03'
 
     // Dependancy Injection
+    def koin_version = '0.9.3'
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-core:$koin_version"
-    implementation "org.koin:koin-android-architecture:$kotlin_version"
+    implementation "org.koin:koin-android-architecture:$koin_version"
 
 }
