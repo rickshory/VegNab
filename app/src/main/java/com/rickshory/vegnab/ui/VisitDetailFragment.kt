@@ -29,7 +29,7 @@ import kotlinx.android.synthetic.main.fragment_visit_add_edit.view.*
  * create an instance of this fragment.
  *
  */
-class FragmentVisitAddEdit : Fragment(),
+class VisitDetailFragment : Fragment(),
     android.view.View.OnFocusChangeListener {
 
     companion object {
@@ -48,7 +48,7 @@ class FragmentVisitAddEdit : Fragment(),
          */
         @JvmStatic
         fun newInstance(visit: Visit?) =
-            FragmentVisitAddEdit().apply {
+            VisitDetailFragment().apply {
                 arguments = Bundle().apply {
                     putParcelable(ARG_VISIT, visit)
 //                    putString(ARG_PARAM2, param2)
@@ -221,5 +221,5 @@ class FragmentVisitAddEdit : Fragment(),
 }
 
 fun createFrag(visit: Visit) {
-    val fragment = FragmentVisitAddEdit.newInstance(visit)
+    val fragment = VisitDetailFragment.newInstance(visit)
 }

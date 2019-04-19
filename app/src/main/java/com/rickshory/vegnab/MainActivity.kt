@@ -9,14 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.rickshory.vegnab.models.Visit
-import com.rickshory.vegnab.ui.FragmentVisitAddEdit
+import com.rickshory.vegnab.ui.VisitDetailFragment
 import com.rickshory.vegnab.ui.FragmentVisitsList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity(),
     FragmentVisitsList.VisitsListInterface,
-    FragmentVisitAddEdit.VisitHeaderInterface,
+    VisitDetailFragment.VisitHeaderInterface,
     NavigationView.OnNavigationItemSelectedListener {
     companion object {
         private val TAG = this::class.java.simpleName
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     private fun showVisitDetailFragment(visit: Visit?) {
-        val frag = FragmentVisitAddEdit.newInstance(visit)
+        val frag = VisitDetailFragment.newInstance(visit)
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, frag, Tags.Fragments.VISIT_HEADER)
             .addToBackStack(null)
