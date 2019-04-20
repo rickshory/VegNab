@@ -3,6 +3,9 @@ package com.rickshory.vegnab.extensions
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 
 fun Editable.set(content: String) {
     if (toString() != content) { // only do if changed
@@ -19,6 +22,11 @@ fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
             afterTextChanged.invoke(editable.toString())
         }
     })
+}
+
+fun <T> LiveData<T>.reObserve(owner: LifecycleOwner, observer: Observer<T>) {
+    removeObserver(observer)
+    observe(owner, observer)
 }
 
 class ComponentExtensions {
