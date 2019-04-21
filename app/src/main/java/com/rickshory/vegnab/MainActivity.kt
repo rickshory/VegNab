@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity(),
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+
+
         isLandscape = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
         var ckFrag = supportFragmentManager.findFragmentByTag(Tags.Fragments.VISIT_HEADER)
