@@ -68,3 +68,9 @@ dependencies {
     implementation "org.koin:koin-android-architecture:$koin_version"
 
 }
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
