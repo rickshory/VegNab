@@ -1,5 +1,7 @@
 package com.rickshory.vegnab.repositories
 
+annotation class Specification(val what: String)
+
 interface Repository<T> {
     fun add(item: T)
 
