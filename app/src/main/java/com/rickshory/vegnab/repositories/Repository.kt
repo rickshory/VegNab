@@ -2,6 +2,10 @@ package com.rickshory.vegnab.repositories
 
 interface Specification {} // marker interface
 
+interface SqlSpecification : Specification {
+    fun toSqlQuery(): String
+}
+
 interface Repository<T> {
     fun add(item: T)
 
