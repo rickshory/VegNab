@@ -1,6 +1,6 @@
 package com.rickshory.vegnab.repositories
 
-annotation class Specification(val what: String)
+interface Specification {} // marker interface
 
 interface Repository<T> {
     fun add(item: T)
