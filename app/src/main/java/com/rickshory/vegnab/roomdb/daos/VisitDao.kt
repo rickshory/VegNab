@@ -1,5 +1,6 @@
 package com.rickshory.vegnab.roomdb.daos
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -10,7 +11,7 @@ import com.rickshory.vegnab.roomdb.entities.Visit
 interface VisitDao {
 
     @Query("SELECT * from Visits")
-    fun getAllVisits(): List<Visit>
+    fun getAllVisits(): LiveData<List<Visit>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(visit: Visit)
