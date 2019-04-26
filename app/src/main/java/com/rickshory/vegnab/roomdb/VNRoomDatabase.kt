@@ -10,3 +10,7 @@ public abstract class VNRoomDatabase: RoomDatabase() {
     abstract fun VisitDao(): VisitDao
 
 }
+
+companion object {
+    
+}
