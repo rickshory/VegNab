@@ -9,13 +9,14 @@ import org.koin.dsl.context.Context
 
 @Database(entities = [Visit::class], version = 1)
 public abstract class VNRoomDatabase: RoomDatabase() {
+
     abstract fun VisitDao(): VisitDao
 
     companion object {
         @Volatile
         private var INSTANCE: VNRoomDatabase? = null
 
-        fun getDatabase(context: Context) : VNRoomDatabase {
+        fun getDatabase(context: Context): VNRoomDatabase {
             return INSTANCE ?: synchronized(this) { // if existing, lock
                 // else create instance
                 val instance = Room.databaseBuilder(
