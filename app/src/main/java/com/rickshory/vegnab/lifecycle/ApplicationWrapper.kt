@@ -10,14 +10,14 @@ import org.koin.dsl.module.Module
 import org.koin.dsl.module.applicationContext
 
 class ApplicationWrapper : Application() {
-//    companion object {
-//        private val modules : Module = applicationContext {
-//            bean { MockVisitsRepository() as VisitsRepository }
-//            viewModel { VisitDetailViewModel(get()) }
-//        }
-//    }
-//    override fun onCreate() {
-//        super.onCreate()
-//        startKoin(listOf(modules))
-//    }
+    companion object {
+        private val modules : Module = applicationContext {
+            bean { MockVisitsRepository() as VisitsRepository }
+            viewModel { VisitDetailViewModel(get()) }
+        }
+    }
+    override fun onCreate() {
+        super.onCreate()
+        startKoin(listOf(modules))
+    }
 }
