@@ -12,5 +12,6 @@ public abstract class VNRoomDatabase: RoomDatabase() {
 }
 
 companion object {
-    
+    @Volatile
+    private var INSTANCE: VNRoomDatabase? = null
 }
