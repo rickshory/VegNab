@@ -1,6 +1,7 @@
 package com.rickshory.vegnab.roomdb
 
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.rickshory.vegnab.roomdb.daos.VisitDao
 import com.rickshory.vegnab.roomdb.entities.Visit
@@ -17,7 +18,11 @@ public abstract class VNRoomDatabase: RoomDatabase() {
         fun getDatabase(context: Context) : VNRoomDatabase {
             return INSTANCE ?: synchronized(this) { // if existing, lock
                 // else create instance
-                val instance = // TODO
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    VNRoomDatabase::class.java,
+                    "VN_database"
+                ).build()
                     INSTANCE = instance
                 instance
             }
