@@ -7,7 +7,7 @@ import com.rickshory.vegnab.roomdb.daos.VisitDao
 import com.rickshory.vegnab.roomdb.entities.Visit
 import org.koin.dsl.context.Context
 
-@Database(entities = [Visit::class], version = 1)
+@Database(entities = arrayOf(Visit::class), version = 1)
 public abstract class VNRoomDatabase: RoomDatabase() {
 
     abstract fun VisitDao(): VisitDao
