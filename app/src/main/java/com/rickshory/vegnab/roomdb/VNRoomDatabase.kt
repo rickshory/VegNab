@@ -24,7 +24,7 @@ public abstract class VNRoomDatabase: RoomDatabase() {
             synchronized(this) { // if existing, lock
                 // else create instance
                 val instance = Room.databaseBuilder(
-                    context.applicationContext,
+                    context.getApplicationContext(),
                     VNRoomDatabase::class.java,
                     "VN_database"
                 ).build()
