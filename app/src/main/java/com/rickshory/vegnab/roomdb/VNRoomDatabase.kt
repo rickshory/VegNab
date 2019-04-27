@@ -10,7 +10,7 @@ import org.koin.dsl.context.Context
 @Database(entities = arrayOf(Visit::class), version = 1)
 public abstract class VNRoomDatabase: RoomDatabase() {
 
-    abstract fun VisitDao(): VisitDao
+    abstract fun visitDao(): VisitDao
 
     companion object {
         @Volatile
