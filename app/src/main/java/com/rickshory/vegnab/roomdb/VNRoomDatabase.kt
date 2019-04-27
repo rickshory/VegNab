@@ -17,7 +17,11 @@ public abstract class VNRoomDatabase: RoomDatabase() {
         private var INSTANCE: VNRoomDatabase? = null
 
         fun getDatabase(context: Context): VNRoomDatabase {
-            return INSTANCE ?: synchronized(this) { // if existing, lock
+            val tempInstance = INSTANCE
+            if (tempInstance != null) {
+                return tempInstance
+            }
+            synchronized(this) { // if existing, lock
                 // else create instance
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
@@ -25,7 +29,7 @@ public abstract class VNRoomDatabase: RoomDatabase() {
                     "VN_database"
                 ).build()
                     INSTANCE = instance
-                instance
+                return instance
             }
         }
     }
