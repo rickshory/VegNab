@@ -1,4 +1,6 @@
 package com.rickshory.vegnab.viewmodels
 
-class VNRoomViewModel {
+import android.app.Application
+
+class VNRoomViewModel (app: Application) {
 }
