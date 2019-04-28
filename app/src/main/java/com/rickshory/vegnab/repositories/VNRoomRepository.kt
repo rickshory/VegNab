@@ -5,5 +5,5 @@ import com.rickshory.vegnab.roomdb.daos.VisitDao
 import com.rickshory.vegnab.roomdb.entities.Visit
 
 class VNRoomRepository (private val visitDao: VisitDao) {
-    val allVisits: LiveData<List<Visit>>
+    val allVisits: LiveData<List<Visit>> = visitDao.getAllVisits()
 }
