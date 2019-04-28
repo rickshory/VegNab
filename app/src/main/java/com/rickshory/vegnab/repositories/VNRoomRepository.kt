@@ -7,5 +7,7 @@ import com.rickshory.vegnab.roomdb.entities.Visit
 class VNRoomRepository (private val visitDao: VisitDao) {
     val allVisits: LiveData<List<Visit>> = visitDao.getAllVisits()
 
-    fun insert(visit: Visit) {}
+    fun insert(visit: Visit) {
+        visitDao.insert(visit)
+    }
 }
