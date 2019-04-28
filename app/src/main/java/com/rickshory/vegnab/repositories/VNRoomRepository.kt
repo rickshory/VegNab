@@ -9,7 +9,7 @@ class VNRoomRepository (private val visitDao: VisitDao) {
     val allVisits: LiveData<List<Visit>> = visitDao.getAllVisits()
 
     @WorkerThread
-    fun insert(visit: Visit) {
+    suspend fun insert(visit: Visit) {
         visitDao.insert(visit)
     }
 }
