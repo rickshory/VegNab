@@ -13,5 +13,6 @@ class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
 
     init {
         val visitsDao = VNRoomDatabase.getDatabase(app).visitDao()
+        repo = VNRoomRepository(visitsDao)
     }
 }
