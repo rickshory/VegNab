@@ -9,10 +9,11 @@ import com.rickshory.vegnab.roomdb.entities.Visit
 
 class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
     private val repo: VNRoomRepository
-    val allVisits: LiveData<List<Visit>>
+    val allVis: LiveData<List<Visit>>
 
     init {
         val visitsDao = VNRoomDatabase.getDatabase(app).visitDao()
         repo = VNRoomRepository(visitsDao)
+        allVis = repo.allVisits
     }
 }
