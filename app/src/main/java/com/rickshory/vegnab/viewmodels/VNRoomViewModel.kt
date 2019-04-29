@@ -12,6 +12,6 @@ class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
     val allVisits: LiveData<List<Visit>>
 
     init {
-        val visitsDao = VNRoomDatabase.getDatabase(application).visitDao()
+        val visitsDao = VNRoomDatabase.getDatabase(app).visitDao()
     }
 }
