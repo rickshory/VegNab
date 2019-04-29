@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.rickshory.vegnab.repositories.VNRoomRepository
+import com.rickshory.vegnab.roomdb.VNRoomDatabase
 import com.rickshory.vegnab.roomdb.entities.Visit
 
 class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
@@ -11,6 +12,6 @@ class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
     val allVisits: LiveData<List<Visit>>
 
     init {
-        
+        val visitsDao = VNRoomDatabase.getDatabase(application).visitDao()
     }
 }
