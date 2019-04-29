@@ -58,8 +58,14 @@ dependencies {
     // Coroutines
 //    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
 //    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+
+//    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+//    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+
+    //update core version
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
+//add coroutines for Android
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
 
 //    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.0'
 
@@ -75,8 +81,8 @@ dependencies {
 
 }
 
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
-}
+//kotlin {
+//    experimental {
+//        coroutines "enable"
+//    }
+//}
