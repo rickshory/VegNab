@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import com.rickshory.vegnab.repositories.VNRoomRepository
 import com.rickshory.vegnab.roomdb.VNRoomDatabase
 import com.rickshory.vegnab.roomdb.entities.Visit
-import kotlinx.coroutines.experimental.Job
+import kotlinx.coroutines.Job
 
 class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
 
