@@ -56,18 +56,8 @@ dependencies {
     implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
 
     // Coroutines
-//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
-//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
-
-//    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
-//    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
-
-    //update core version
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.0"
-//add coroutines for Android
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.0"
-
-//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.0'
 
     // Test Libraries
     testImplementation 'junit:junit:4.12'
