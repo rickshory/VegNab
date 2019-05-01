@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import com.rickshory.vegnab.repositories.VNRoomRepository
 import com.rickshory.vegnab.roomdb.VNRoomDatabase
 import com.rickshory.vegnab.roomdb.entities.Visit
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlin.coroutines.CoroutineContext
@@ -15,6 +16,7 @@ class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
     private var parentJob = Job()
     private val coroutineContext: CoroutineContext
         get() = parentJob + Dispatchers.Main
+    private val scope = CoroutineScope(coroutineContext)
 
     private val repo: VNRoomRepository
     val allVis: LiveData<List<Visit>>
