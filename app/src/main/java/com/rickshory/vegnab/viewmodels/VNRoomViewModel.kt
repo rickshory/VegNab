@@ -26,4 +26,8 @@ class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
         repo = VNRoomRepository(visitsDao)
         allVis = repo.allVisits
     }
+
+    override fun onCleared() {
+        super.onCleared()
+    }
 }
