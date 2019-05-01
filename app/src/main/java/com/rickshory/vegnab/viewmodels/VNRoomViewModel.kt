@@ -9,6 +9,7 @@ import com.rickshory.vegnab.roomdb.entities.Visit
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
@@ -25,6 +26,10 @@ class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
         val visitsDao = VNRoomDatabase.getDatabase(app).visitDao()
         repo = VNRoomRepository(visitsDao)
         allVis = repo.allVisits
+    }
+
+    fun insert(visit: Visit) = scope.launch(Dispatchers.IO) {
+        
     }
 
     override fun onCleared() {
