@@ -29,7 +29,7 @@ class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
     }
 
     fun insert(visit: Visit) = scope.launch(Dispatchers.IO) {
-        
+        repo.insert(visit)
     }
 
     override fun onCleared() {
