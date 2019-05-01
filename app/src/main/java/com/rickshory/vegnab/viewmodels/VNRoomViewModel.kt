@@ -29,5 +29,6 @@ class VNRoomViewModel (app: Application) : AndroidViewModel(app)  {
 
     override fun onCleared() {
         super.onCleared()
+        parentJob.cancel()
     }
 }
