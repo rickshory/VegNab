@@ -1,4 +1,4 @@
-package com.rickshory.vegnab
+package com.rickshory.vegnab.adapters
 
 import android.database.Cursor
 import android.util.Log
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.rickshory.vegnab.R
 import com.rickshory.vegnab.contracts.Contract_Visits
 import com.rickshory.vegnab.models.Visit
 import kotlinx.android.extensions.LayoutContainer
