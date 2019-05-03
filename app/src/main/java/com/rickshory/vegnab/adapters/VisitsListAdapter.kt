@@ -1,4 +1,8 @@
 package com.rickshory.vegnab.adapters
 
-class VisitsListAdapter {
+import android.content.Context
+
+class VisitsListAdapter internal constructor(
+    context: Context
+) {
 }
