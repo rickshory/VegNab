@@ -8,7 +8,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import androidx.recyclerview.widget.RecyclerView
 import com.rickshory.vegnab.models.Visit
 import com.rickshory.vegnab.ui.VisitDetailFragment
 import com.rickshory.vegnab.ui.FragmentVisitsList
@@ -28,8 +27,6 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        val vlRecycView = findViewById<RecyclerView>(R.id.visits_list)
 
         isLandscape = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
