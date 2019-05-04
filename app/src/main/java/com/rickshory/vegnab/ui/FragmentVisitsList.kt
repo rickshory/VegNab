@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_visits.*
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_VIS_LIST_OPTS = "visListOpts"
 
-private lateinit var vlRecycView: RecyclerView
+//private lateinit var vlRecycView: RecyclerView
 private lateinit var viewAdapter: RecyclerView.Adapter<*>
 private lateinit var viewManager: RecyclerView.LayoutManager
 
@@ -43,7 +43,7 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
-        vlRecycView = findViewById<RecyclerView>(R.id.visits_list)
+        val vlRecycView = findViewById<RecyclerView>(R.id.visits_list)
 
 
     }
