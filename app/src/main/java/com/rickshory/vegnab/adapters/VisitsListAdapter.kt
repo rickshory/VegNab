@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.rickshory.vegnab.roomdb.entities.Visit
 import kotlinx.android.synthetic.main.visit_list_item.view.*
 
 class VisitsListAdapter internal constructor(
@@ -13,7 +14,7 @@ class VisitsListAdapter internal constructor(
 ) : RecyclerView.Adapter<VisitsListAdapter.VisitsViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-
+    private val visits = emptyList<Visit>() // cached copy of list of Visits
 
     inner class VisitsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameItemView: TextView = itemView.vli_name
