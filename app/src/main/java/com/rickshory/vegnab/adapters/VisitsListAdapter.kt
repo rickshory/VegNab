@@ -35,6 +35,7 @@ class VisitsListAdapter internal constructor(
 
     internal fun setVisits(visits: List<Visit>) {
         this.visits = visits
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = visits.size
