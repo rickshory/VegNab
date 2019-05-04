@@ -43,7 +43,8 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
-        val vlRecycView = findViewById<RecyclerView>(R.id.visits_list)
+        val v = inflater.inflate(R.layout.fragment_visits)
+        val vlRecycView = v.findViewById<RecyclerView>(R.id.visits_list)
 
 
     }
