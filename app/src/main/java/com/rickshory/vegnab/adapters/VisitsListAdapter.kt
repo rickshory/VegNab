@@ -18,6 +18,7 @@ class VisitsListAdapter internal constructor(
 
     inner class VisitsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameItemView: TextView = itemView.vli_name
+        val dateNotesItemView: TextView = itemView.vli_date_notes
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VisitsViewHolder {
@@ -26,6 +27,8 @@ class VisitsListAdapter internal constructor(
 
     override fun onBindViewHolder(holder: VisitsViewHolder, position: Int) {
         val current = visits[position]
+        holder.nameItemView.text = current.name
+        holder.dateNotesItemView.text = current.notes // TODO add date later
     }
 
     override fun getItemCount() = visits.size
