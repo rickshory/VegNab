@@ -25,7 +25,7 @@ class VisitsListAdapter internal constructor(
     }
 
     override fun onBindViewHolder(holder: VisitsViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val current = visits[position]
     }
 
     override fun getItemCount() = visits.size
