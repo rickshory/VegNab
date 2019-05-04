@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.rickshory.vegnab.R
 import com.rickshory.vegnab.roomdb.entities.Visit
 import kotlinx.android.synthetic.main.visit_list_item.view.*
 
@@ -22,7 +23,8 @@ class VisitsListAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VisitsViewHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val itemView = inflater.inflate(R.layout.visit_list_item, parent, false)
+        return VisitsViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: VisitsViewHolder, position: Int) {
