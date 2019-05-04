@@ -43,10 +43,6 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
-        val v = inflater.inflate(R.layout.fragment_visits)
-        val vlRecycView = v.findViewById<RecyclerView>(R.id.visits_list)
-
-
     }
 
     override fun onCreateView(
@@ -55,7 +51,9 @@ class FragmentVisitsList : Fragment() {
     ): View? {
         Log.d(TAG, "onCreateView: starts")
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_visits, container, false)
+        val fragView = inflater.inflate(R.layout.fragment_visits, container, false)
+        val vlRecycView = fragView.findViewById<RecyclerView>(R.id.visits_list)
+        return fragView
     }
 
 
