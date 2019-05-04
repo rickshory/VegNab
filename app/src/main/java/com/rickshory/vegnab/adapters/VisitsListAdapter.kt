@@ -15,7 +15,7 @@ class VisitsListAdapter internal constructor(
 ) : RecyclerView.Adapter<VisitsListAdapter.VisitsViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private val visits = emptyList<Visit>() // cached copy of list of Visits
+    private var visits = emptyList<Visit>() // cached copy of list of Visits
 
     inner class VisitsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameItemView: TextView = itemView.vli_name
@@ -31,6 +31,10 @@ class VisitsListAdapter internal constructor(
         val current = visits[position]
         holder.nameItemView.text = current.name
         holder.dateNotesItemView.text = current.notes // TODO add date later
+    }
+
+    internal fun setVisits(visits: List<Visit>) {
+        this.visits = visits
     }
 
     override fun getItemCount() = visits.size
