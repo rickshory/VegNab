@@ -54,7 +54,7 @@ class FragmentVisitsList : Fragment() {
         // Inflate the layout for this fragment
         val fragView = inflater.inflate(R.layout.fragment_visits, container, false)
         vlRecycView = fragView.findViewById<RecyclerView>(R.id.visits_list)
-//        val vlAdapter = VisitsListAdapter(context)
+
 
         return fragView
     }
@@ -67,6 +67,7 @@ class FragmentVisitsList : Fragment() {
 
     override fun onAttach(context: Context) {
         Log.d(TAG, "onAttach: starts")
+        val vlAdapter = VisitsListAdapter(context)
         super.onAttach(context)
         if (context is VisitsListInterface) {
             listener = context
