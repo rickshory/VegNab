@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.rickshory.vegnab.R
 import com.rickshory.vegnab.VisitsListOpts
+import com.rickshory.vegnab.adapters.VisitsListAdapter
 import kotlinx.android.synthetic.main.fragment_visits.*
 
 /**
@@ -53,6 +54,8 @@ class FragmentVisitsList : Fragment() {
         // Inflate the layout for this fragment
         val fragView = inflater.inflate(R.layout.fragment_visits, container, false)
         val vlRecycView = fragView.findViewById<RecyclerView>(R.id.visits_list)
+        val vlAdapter = VisitsListAdapter(context)
+        
         return fragView
     }
 
