@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rickshory.vegnab.R
 import com.rickshory.vegnab.VisitsListOpts
@@ -70,6 +71,7 @@ class FragmentVisitsList : Fragment() {
         super.onAttach(context)
         val vlAdapter = VisitsListAdapter(context)
         vlRecycView.adapter = vlAdapter
+        vlRecycView.layoutManager = LinearLayoutManager(context)
 
         if (context is VisitsListInterface) {
             listener = context
