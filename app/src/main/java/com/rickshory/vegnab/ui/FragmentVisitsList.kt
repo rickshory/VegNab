@@ -69,6 +69,7 @@ class FragmentVisitsList : Fragment() {
         Log.d(TAG, "onAttach: starts")
         super.onAttach(context)
         val vlAdapter = VisitsListAdapter(context)
+        vlRecycView.adapter = vlAdapter
 
         if (context is VisitsListInterface) {
             listener = context
