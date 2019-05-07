@@ -67,8 +67,9 @@ class FragmentVisitsList : Fragment() {
 
     override fun onAttach(context: Context) {
         Log.d(TAG, "onAttach: starts")
-        val vlAdapter = VisitsListAdapter(context)
         super.onAttach(context)
+        val vlAdapter = VisitsListAdapter(context)
+
         if (context is VisitsListInterface) {
             listener = context
         } else {
