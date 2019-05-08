@@ -61,15 +61,15 @@ class FragmentVisitsList : Fragment() {
     }
 
 
-//    // TODO: Rename method, update argument and hook method into UI event
+    //    // TODO: Rename method, update argument and hook method into UI event
 //    fun onButtonPressed(uri: Uri) {
 //        listener?.onGoClicked(uri)
 //    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d(TAG, "onAttach: starts")
         super.onViewCreated(view, savedInstanceState)
-    vlRecycView.adapter = vlAdapter
-    vlRecycView.layoutManager = LinearLayoutManager(context)
+        vlRecycView.adapter = vlAdapter
+        vlRecycView.layoutManager = LinearLayoutManager(context)
     }
 
     override fun onAttach(context: Context) {
@@ -90,12 +90,12 @@ class FragmentVisitsList : Fragment() {
 
         // back button is up arrow
         if (listener is AppCompatActivity) {
-              val actionbar = (listener as AppCompatActivity?)?.supportActionBar
+            val actionbar = (listener as AppCompatActivity?)?.supportActionBar
             actionbar?.setDisplayHomeAsUpEnabled(true)
         }
 
         fab_new_visit.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
             Log.d(TAG, "fab_new_visit action: start")
             listener?.visitsListOnGoClicked()
