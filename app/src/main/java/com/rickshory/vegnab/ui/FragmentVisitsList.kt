@@ -66,15 +66,17 @@ class FragmentVisitsList : Fragment() {
 //        listener?.onGoClicked(uri)
 //    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d(TAG, "onAttach: starts")
         super.onViewCreated(view, savedInstanceState)
+    vlRecycView.adapter = vlAdapter
+    vlRecycView.layoutManager = LinearLayoutManager(context)
     }
 
     override fun onAttach(context: Context) {
         Log.d(TAG, "onAttach: starts")
         super.onAttach(context)
         val vlAdapter = VisitsListAdapter(context)
-        vlRecycView.adapter = vlAdapter
-        vlRecycView.layoutManager = LinearLayoutManager(context)
+
 
         if (context is VisitsListInterface) {
             listener = context
