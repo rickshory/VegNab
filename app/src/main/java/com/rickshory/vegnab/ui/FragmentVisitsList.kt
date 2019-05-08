@@ -65,6 +65,9 @@ class FragmentVisitsList : Fragment() {
 //    fun onButtonPressed(uri: Uri) {
 //        listener?.onGoClicked(uri)
 //    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
 
     override fun onAttach(context: Context) {
         Log.d(TAG, "onAttach: starts")
