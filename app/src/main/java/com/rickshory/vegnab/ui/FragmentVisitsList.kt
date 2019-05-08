@@ -28,7 +28,7 @@ import kotlinx.android.synthetic.main.fragment_visits.*
 private const val ARG_VIS_LIST_OPTS = "visListOpts"
 
 private lateinit var vlRecycView: RecyclerView
-private lateinit var viewAdapter: RecyclerView.Adapter<*>
+private lateinit var vlAdapter: RecyclerView.Adapter<*>
 private lateinit var viewManager: RecyclerView.LayoutManager
 
 class FragmentVisitsList : Fragment() {
@@ -75,7 +75,7 @@ class FragmentVisitsList : Fragment() {
     override fun onAttach(context: Context) {
         Log.d(TAG, "onAttach: starts")
         super.onAttach(context)
-        val vlAdapter = VisitsListAdapter(context)
+        vlAdapter = VisitsListAdapter(context)
 
 
         if (context is VisitsListInterface) {
