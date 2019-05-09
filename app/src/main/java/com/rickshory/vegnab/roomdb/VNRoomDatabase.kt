@@ -40,3 +40,5 @@ public abstract class VNRoomDatabase: RoomDatabase() {
     }
 }
 
+private class VNDatabaseCallback()
+
