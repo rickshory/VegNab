@@ -10,7 +10,6 @@ import com.rickshory.vegnab.roomdb.entities.Visit
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlin.reflect.KParameter
 
 //import org.koin.dsl.context.Context
 
@@ -42,6 +41,7 @@ public abstract class VNRoomDatabase: RoomDatabase() {
             }
         }
     }
+
     private class VNDatabaseCallback(
         private val scope: CoroutineScope
     ) : RoomDatabase.Callback() {
@@ -53,6 +53,10 @@ public abstract class VNRoomDatabase: RoomDatabase() {
                 }
             }
         }
+    }
+
+    fun populateDatabase() {
+        
     }
 }
 
