@@ -50,7 +50,9 @@ private class VNDatabaseCallback(
     override fun onOpen(db: SupportSQLiteDatabase) {
         super.onOpen(db)
         INSTANCE?.let { database ->
-            scope.launch(Dispatchers.IO) {  }
+            scope.launch(Dispatchers.IO) {
+                populateDatabase(database.visitDao())
+            }
         }
     }
 }
