@@ -53,12 +53,13 @@ public abstract class VNRoomDatabase: RoomDatabase() {
                 }
             }
         }
+        fun populateDatabase(visitDao: VisitDao) {
+            visitDao.deleteAll()
+
+        }
     }
 
-    fun populateDatabase(visitDao: VisitDao) {
-        visitDao.deleteAll()
 
-    }
 }
 
 
