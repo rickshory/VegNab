@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.rickshory.vegnab.roomdb.daos.VisitDao
 import com.rickshory.vegnab.roomdb.entities.Visit
 import kotlinx.coroutines.CoroutineScope
@@ -42,5 +43,9 @@ public abstract class VNRoomDatabase: RoomDatabase() {
 
 private class VNDatabaseCallback(
     private val scope: CoroutineScope
-) : RoomDatabase.Callback() {}
+) : RoomDatabase.Callback() {
+    override fun onOpen(db: SupportSQLiteDatabase) {
+        super.onOpen(db)
+    }
+}
 
