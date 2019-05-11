@@ -8,6 +8,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.rickshory.vegnab.roomdb.daos.VisitDao
 import com.rickshory.vegnab.roomdb.entities.Visit
 import kotlinx.coroutines.CoroutineScope
+import kotlin.reflect.KParameter
 
 //import org.koin.dsl.context.Context
 
@@ -46,6 +47,7 @@ private class VNDatabaseCallback(
 ) : RoomDatabase.Callback() {
     override fun onOpen(db: SupportSQLiteDatabase) {
         super.onOpen(db)
+        INSTANCE?.let {}
     }
 }
 
