@@ -40,5 +40,7 @@ public abstract class VNRoomDatabase: RoomDatabase() {
     }
 }
 
-private class VNDatabaseCallback()
+private class VNDatabaseCallback(
+    private val scope: CoroutineScope
+)
 
