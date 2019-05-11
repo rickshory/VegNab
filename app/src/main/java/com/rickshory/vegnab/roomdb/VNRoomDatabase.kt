@@ -42,18 +42,19 @@ public abstract class VNRoomDatabase: RoomDatabase() {
             }
         }
     }
-}
-
-private class VNDatabaseCallback(
-    private val scope: CoroutineScope
-) : RoomDatabase.Callback() {
-    override fun onOpen(db: SupportSQLiteDatabase) {
-        super.onOpen(db)
-        INSTANCE?.let { database ->
-            scope.launch(Dispatchers.IO) {
-                populateDatabase(database.visitDao())
+    private class VNDatabaseCallback(
+        private val scope: CoroutineScope
+    ) : RoomDatabase.Callback() {
+        override fun onOpen(db: SupportSQLiteDatabase) {
+            super.onOpen(db)
+            INSTANCE?.let { database ->
+                scope.launch(Dispatchers.IO) {
+                    populateDatabase(database.visitDao())
+                }
             }
         }
     }
 }
+
+
 
