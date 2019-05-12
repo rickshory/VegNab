@@ -35,7 +35,7 @@ public abstract class VNRoomDatabase: RoomDatabase() {
                     context.applicationContext,
                     VNRoomDatabase::class.java,
                     "VN_database"
-                ).build()
+                ).addCallback(VNDatabaseCallback(scope)).build()
                     INSTANCE = instance
                 return instance
             }
