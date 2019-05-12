@@ -57,7 +57,7 @@ public abstract class VNRoomDatabase: RoomDatabase() {
         fun populateDatabase(visitDao: VisitDao) {
             visitDao.deleteAll()
             var visit = Visit(1, "tstVis", "test of Visit entry")
-            
+            visitDao.insert(visit)
 
         }
     }
