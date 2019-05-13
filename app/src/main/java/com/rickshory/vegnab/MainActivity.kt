@@ -15,7 +15,7 @@ import com.rickshory.vegnab.viewmodels.VNRoomViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-private lateinit var vnRoomViewModel: VNRoomViewModel
+lateinit var vnRoomViewModel: VNRoomViewModel
 
 class MainActivity : AppCompatActivity(),
     FragmentVisitsList.VisitsListInterface,
