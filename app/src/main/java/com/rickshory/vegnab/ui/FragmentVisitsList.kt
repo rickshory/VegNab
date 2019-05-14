@@ -48,6 +48,9 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
+        vnRoomViewModel = activity?.run {
+
+        }
     }
 
     override fun onCreateView(
