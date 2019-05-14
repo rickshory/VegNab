@@ -11,11 +11,8 @@ import android.view.MenuItem
 import com.rickshory.vegnab.models.Visit
 import com.rickshory.vegnab.ui.VisitDetailFragment
 import com.rickshory.vegnab.ui.FragmentVisitsList
-import com.rickshory.vegnab.viewmodels.VNRoomViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-
-lateinit var vnRoomViewModel: VNRoomViewModel
 
 class MainActivity : AppCompatActivity(),
     FragmentVisitsList.VisitsListInterface,

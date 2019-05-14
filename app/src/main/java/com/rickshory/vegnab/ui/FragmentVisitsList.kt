@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rickshory.vegnab.R
 import com.rickshory.vegnab.VisitsListOpts
 import com.rickshory.vegnab.adapters.VisitsListAdapter
+import com.rickshory.vegnab.viewmodels.VNRoomViewModel
 import kotlinx.android.synthetic.main.fragment_visits.*
 
 /**
@@ -26,6 +27,8 @@ import kotlinx.android.synthetic.main.fragment_visits.*
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_VIS_LIST_OPTS = "visListOpts"
+
+private lateinit var vnRoomViewModel: VNRoomViewModel
 
 private lateinit var vlRecycView: RecyclerView
 private lateinit var vlAdapter: RecyclerView.Adapter<*>
