@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rickshory.vegnab.R
@@ -49,8 +50,8 @@ class FragmentVisitsList : Fragment() {
 //            param2 = it.getString(ARG_PARAM2)
 //        }
         vnRoomViewModel = activity?.run {
-
-        }
+            ViewModelProviders.of(this).get(VNRoomViewModel::class.java)
+        } ?: throw Exception("Invalid Activity")
     }
 
     override fun onCreateView(
