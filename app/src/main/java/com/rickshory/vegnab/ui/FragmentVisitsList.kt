@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,6 +53,9 @@ class FragmentVisitsList : Fragment() {
         vnRoomViewModel = activity?.run {
             ViewModelProviders.of(this).get(VNRoomViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
+        vnRoomViewModel.allVis.observe(this, Observer {
+            
+        })
     }
 
     override fun onCreateView(
