@@ -41,6 +41,10 @@
     <string name="vae_txt_location">Reference locaton. Long-press for options.</string>
     <string name="vae_hint_location">Location</string>
 
+    <string name="vae_hint_visit">Visit</string>
+    <string name="vae_button_save">Save</string>
+    <string name="vae_not_saved">Visit not saved</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
