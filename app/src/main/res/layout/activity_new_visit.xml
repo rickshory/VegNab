@@ -14,13 +14,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:inputType="none"
         android:hint="@string/vae_hint_name"
+        android:importantForAutofill="no"
+        android:inputType="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="vis test 1"
-        android:importantForAutofill="no" />
+        tools:text="vis test 1" />
 
     <EditText
         android:id="@+id/edit_visit_description"
@@ -30,13 +30,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:inputType="none"
         android:hint="@string/vae_hint_notes"
+        android:importantForAutofill="no"
+        android:inputType="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_visit_name"
-        tools:text="another vis"
-        android:importantForAutofill="no" />
+        tools:text="another vis" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/saveFAB"
@@ -47,6 +47,7 @@
         android:background="@color/design_default_color_secondary"
         android:clickable="true"
         android:focusable="true"
+        android:foreground="@drawable/ic_menu_send"
         android:tint="@color/design_default_color_primary"
         app:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
