@@ -48,6 +48,6 @@
         android:text="@string/vae_button_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_visit_description" /><![CDATA[
+        app:layout_constraintTop_toBottomOf="@+id/edit_visit_description" />
 
-]]></androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
