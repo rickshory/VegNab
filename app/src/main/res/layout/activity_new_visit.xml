@@ -39,7 +39,7 @@
         tools:text="another vis" />
 
     <Button
-        android:id="@+id/btn_save"
+        android:id="@+id/btn_save_visit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
