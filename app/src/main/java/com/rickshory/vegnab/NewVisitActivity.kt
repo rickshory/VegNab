@@ -13,5 +13,6 @@ class NewVisitActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_visit)
         editVisitNameView = edit_visit_name
+        editVisitDescriptionView = edit_visit_description
     }
 }
