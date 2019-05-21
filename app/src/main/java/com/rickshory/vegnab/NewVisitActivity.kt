@@ -16,5 +16,8 @@ class NewVisitActivity : AppCompatActivity() {
         editVisitNameView = edit_visit_name
         editVisitDescriptionView = edit_visit_description
         val btnSaveVisit = findViewById<Button>(R.id.btn_save_visit)
+        btnSaveVisit.setOnClickListener {
+            
+        }
     }
 }
