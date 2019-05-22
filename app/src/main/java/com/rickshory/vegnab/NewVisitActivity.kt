@@ -21,7 +21,7 @@ class NewVisitActivity : AppCompatActivity() {
         btnSaveVisit.setOnClickListener {
             val replyIntent = Intent()
             if (TextUtils.isEmpty(editVisitNameView.text)) {
-                
+
             }
         }
     }
