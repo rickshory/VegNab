@@ -50,9 +50,9 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
-        
+
         vnRoomViewModel = activity?.run {
-            vlAdapter = VisitsListAdapter(this.context)
+            vlAdapter = VisitsListAdapter(this)
             ViewModelProviders.of(this).get(VNRoomViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
         vnRoomViewModel.allVis.observe(this, Observer {visits_list ->
