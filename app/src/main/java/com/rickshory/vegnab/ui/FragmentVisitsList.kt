@@ -51,12 +51,13 @@ class FragmentVisitsList : Fragment() {
 //            param2 = it.getString(ARG_PARAM2)
 //        }
 
+        val ctx = this.context
         vnRoomViewModel = activity?.run {
 
             ViewModelProviders.of(this).get(VNRoomViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
         vnRoomViewModel.allVis.observe(this, Observer {visits_list ->
-            vlAdapter = VisitsListAdapter(this)
+            vlAdapter = VisitsListAdapter(ctx)
             // update the cached copy of visits in the adapter
             visits_list?.let { vlAdapter.setVisits{it}}
         })
