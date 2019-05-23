@@ -33,7 +33,7 @@ class VisitsListAdapter internal constructor(
         holder.dateNotesItemView.text = current.notes // TODO add date later
     }
 
-    public fun setVisits(visits: List<Visit>) {
+    internal fun setVisits(visits: List<Visit>) {
         this.visits = visits
         notifyDataSetChanged()
     }
