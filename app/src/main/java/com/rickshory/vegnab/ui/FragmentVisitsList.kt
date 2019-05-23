@@ -50,15 +50,13 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
-        vlAdapter = VisitsListAdapter(activity.applicationContext)
         vnRoomViewModel = activity?.run {
-
             ViewModelProviders.of(this).get(VNRoomViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
 
         vnRoomViewModel.allVis.observe(this, Observer {visits_list ->
             // update the cached copy of visits in the adapter
-            visits_list?.let { vlAdapter.setVisits{it}}
+            visits_list?.let { vlAdapter.let{VisitsListAdapter(this)}.setVisits{it}}
         })
     }
 
