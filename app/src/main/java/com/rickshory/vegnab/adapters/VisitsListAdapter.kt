@@ -10,11 +10,8 @@ import com.rickshory.vegnab.R
 import com.rickshory.vegnab.roomdb.entities.Visit
 import kotlinx.android.synthetic.main.visit_list_item.view.*
 
-class VisitsListAdapter internal constructor(
-    context: Context
-) : RecyclerView.Adapter<VisitsListAdapter.VisitsViewHolder>() {
+class VisitsListAdapter : RecyclerView.Adapter<VisitsListAdapter.VisitsViewHolder>() {
 
-    private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var visits = emptyList<Visit>() // cached copy of list of Visits
 
     fun setVisits(visits: List<Visit>) {
@@ -32,9 +29,15 @@ class VisitsListAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VisitsViewHolder {
-        val itemView = inflater.inflate(R.layout.visit_list_item, parent, false)
+        val itemView =
+            LayoutInflater
+                .from(parent.context)
+                .inflate(R.layout.visit_list_item, parent, false);
         return VisitsViewHolder(itemView)
     }
+
+    // If a context is needed outside of the onCreateViewHolder() method, as long as there's a ViewHolder instance
+    // available, a context can be retrieved via: viewHolder.itemView.getContext().
 
     override fun onBindViewHolder(holder: VisitsViewHolder, position: Int) {
         val current = visits[position]
