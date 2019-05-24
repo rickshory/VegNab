@@ -55,10 +55,10 @@ class FragmentVisitsList : Fragment() {
         vnRoomViewModel = activity?.let {
             ViewModelProviders.of(this).get(VNRoomViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
-        vlAdapter = VisitsListAdapter()
+
         vnRoomViewModel.allVis.observe(this, Observer {visits_list ->
             // update the cached copy of visits in the adapter
-            visits_list?.let{vlAdapter.setVisits(it) }})
+            visits_list?.let{VisitsListAdapter().setVisits(it) }})
     }
 
     override fun onCreateView(
@@ -73,8 +73,7 @@ class FragmentVisitsList : Fragment() {
 
         return fragView
     }
-
-
+    
     //    // TODO: Rename method, update argument and hook method into UI event
 //    fun onButtonPressed(uri: Uri) {
 //        listener?.onGoClicked(uri)
