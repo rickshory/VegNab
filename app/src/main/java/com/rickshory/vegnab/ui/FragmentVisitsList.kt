@@ -73,7 +73,7 @@ class FragmentVisitsList : Fragment() {
 
         return fragView
     }
-    
+
     //    // TODO: Rename method, update argument and hook method into UI event
 //    fun onButtonPressed(uri: Uri) {
 //        listener?.onGoClicked(uri)
