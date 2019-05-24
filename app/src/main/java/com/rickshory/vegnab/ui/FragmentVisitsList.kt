@@ -55,7 +55,7 @@ class FragmentVisitsList : Fragment() {
         vnRoomViewModel = activity?.let {
             ViewModelProviders.of(this).get(VNRoomViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
-
+        vlAdapter = VisitsListAdapter()
         vnRoomViewModel.allVis.observe(this, Observer {visits_list ->
             // update the cached copy of visits in the adapter
             visits_list?.let{vlAdapter.setVisits(it) }})
@@ -89,7 +89,7 @@ class FragmentVisitsList : Fragment() {
     override fun onAttach(context: Context) {
         Log.d(TAG, "onAttach: starts")
         super.onAttach(context)
-        vlAdapter = VisitsListAdapter(context)
+        vlAdapter = VisitsListAdapter()
 
 
         if (context is VisitsListInterface) {
