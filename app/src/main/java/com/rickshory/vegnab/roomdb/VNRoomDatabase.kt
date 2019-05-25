@@ -60,6 +60,8 @@ public abstract class VNRoomDatabase: RoomDatabase() {
             visitDao.insert(visit)
             visit = Visit(2, "secondVis", "another test")
             visitDao.insert(visit)
+            visit = Visit(3, "addlVis", "yet more")
+            visitDao.insert(visit)
         }
     }
 
