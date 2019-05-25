@@ -1,6 +1,7 @@
 package com.rickshory.vegnab.roomdb
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -15,7 +16,7 @@ import kotlinx.coroutines.launch
 
 @Database(entities = arrayOf(Visit::class), version = 1)
 public abstract class VNRoomDatabase: RoomDatabase() {
-
+    private val TAG = this::class.java.simpleName
     abstract fun visitDao(): VisitDao
 
     companion object {
@@ -45,6 +46,9 @@ public abstract class VNRoomDatabase: RoomDatabase() {
     private class VNDatabaseCallback(
         private val scope: CoroutineScope
     ) : RoomDatabase.Callback() {
+
+        private val TAG = this::class.java.simpleName
+
         override fun onOpen(db: SupportSQLiteDatabase) {
             super.onOpen(db)
             INSTANCE?.let { database ->
@@ -56,10 +60,13 @@ public abstract class VNRoomDatabase: RoomDatabase() {
 
         fun populateDatabase(visitDao: VisitDao) {
             visitDao.deleteAll()
+            Log.d(TAG, "adding record 1 to database")
             var visit = Visit(1, "tstVis", "test of Visit entry")
             visitDao.insert(visit)
+            Log.d(TAG, "adding record 2 to database")
             visit = Visit(2, "secondVis", "another test")
             visitDao.insert(visit)
+            Log.d(TAG, "adding record 3 to database")
             visit = Visit(3, "addlVis", "yet more")
             visitDao.insert(visit)
         }
