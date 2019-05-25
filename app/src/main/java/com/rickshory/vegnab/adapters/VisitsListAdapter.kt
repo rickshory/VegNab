@@ -1,6 +1,7 @@
 package com.rickshory.vegnab.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +12,11 @@ import com.rickshory.vegnab.roomdb.entities.Visit
 import kotlinx.android.synthetic.main.visit_list_item.view.*
 
 class VisitsListAdapter : RecyclerView.Adapter<VisitsListAdapter.VisitsViewHolder>() {
-
+    private val TAG = this::class.java.simpleName
     private var visits = emptyList<Visit>() // cached copy of list of Visits
 
     fun setVisits(visits: List<Visit>) {
+        Log.d(TAG, "in setVisits")
         this.visits = visits
         notifyDataSetChanged()
     }
