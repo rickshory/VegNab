@@ -21,10 +21,6 @@ class VisitsListAdapter : RecyclerView.Adapter<VisitsListAdapter.VisitsViewHolde
         notifyDataSetChanged()
     }
 
-    fun sayHello() {
-        // empty stub
-    }
-
     inner class VisitsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameItemView: TextView = itemView.vli_name
         val dateNotesItemView: TextView = itemView.vli_date_notes
