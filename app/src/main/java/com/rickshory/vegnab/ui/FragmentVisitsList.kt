@@ -58,7 +58,8 @@ class FragmentVisitsList : Fragment() {
 
         vnRoomViewModel.allVis.observe(this, Observer {visits_list ->
             // update the cached copy of visits in the adapter
-            visits_list?.let{VisitsListAdapter().setVisits(it) }})
+            visits_list?.let{{VisitsListAdapter().setVisits(it)}.also{VisitsListAdapter().itemCount} }
+        })
     }
 
     override fun onCreateView(

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProviders
+import com.rickshory.vegnab.adapters.VisitsListAdapter
 import com.rickshory.vegnab.models.Visit
 import com.rickshory.vegnab.ui.VisitDetailFragment
 import com.rickshory.vegnab.ui.FragmentVisitsList
