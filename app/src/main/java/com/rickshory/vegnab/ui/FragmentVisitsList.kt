@@ -35,10 +35,11 @@ private const val ARG_VIS_LIST_OPTS = "visListOpts"
 private lateinit var vnRoomViewModel: VNRoomViewModel
 
 private lateinit var vlRecycView: RecyclerView
-private lateinit var vlAdapter: RecyclerView.Adapter<*>
+
 private lateinit var viewManager: RecyclerView.LayoutManager
 
 class FragmentVisitsList : Fragment() {
+    private lateinit var vlAdapter: RecyclerView.Adapter<*>
     private val TAG = this::class.java.simpleName
     private var visitsListOpts: VisitsListOpts? = null
     //    private var param2: String? = null
