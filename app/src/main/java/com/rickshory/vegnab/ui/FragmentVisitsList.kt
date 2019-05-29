@@ -18,6 +18,7 @@ import com.rickshory.vegnab.adapters.VisitsListAdapter
 import com.rickshory.vegnab.viewmodels.VNRoomViewModel
 import kotlinx.android.synthetic.main.fragment_visits.*
 import org.koin.dsl.module.applicationContext
+import com.rickshory.vegnab.ui.vlAdapter as vlAdapter
 
 /**
  * A simple [Fragment] subclass.
@@ -58,8 +59,7 @@ class FragmentVisitsList : Fragment() {
 
         vnRoomViewModel.allVis.observe(this, Observer {visits_list ->
             // update the cached copy of visits in the adapter
-            visits_list?.let{{vlAdapter.setVisits(it)}
-                .also{Log.d(TAG, "Visit items in DB ${vlAdapter.itemCount}")} }
+            visits_list?.let{{vlAdapter.setVisits(it)}}
         }) //left?.let { node -> queue.add(node) }
     }
 
