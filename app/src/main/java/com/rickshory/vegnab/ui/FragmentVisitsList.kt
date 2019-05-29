@@ -18,7 +18,7 @@ import com.rickshory.vegnab.adapters.VisitsListAdapter
 import com.rickshory.vegnab.viewmodels.VNRoomViewModel
 import kotlinx.android.synthetic.main.fragment_visits.*
 import org.koin.dsl.module.applicationContext
-import com.rickshory.vegnab.ui.vlAdapter as vlAdapter
+
 
 /**
  * A simple [Fragment] subclass.
@@ -33,13 +33,13 @@ import com.rickshory.vegnab.ui.vlAdapter as vlAdapter
 private const val ARG_VIS_LIST_OPTS = "visListOpts"
 
 private lateinit var vnRoomViewModel: VNRoomViewModel
-private lateinit var vlAdapter: RecyclerView.Adapter<*>
+
 private lateinit var vlRecycView: RecyclerView
 
 private lateinit var viewManager: RecyclerView.LayoutManager
 
 class FragmentVisitsList : Fragment() {
-
+    private lateinit var vlAdapter: RecyclerView.Adapter<*>
     private val TAG = this::class.java.simpleName
     private var visitsListOpts: VisitsListOpts? = null
     //    private var param2: String? = null
