@@ -117,6 +117,10 @@ class FragmentVisitsList : Fragment() {
             listener?.visitsListOnGoClicked()
             Log.d(TAG, "fab_new_visit action: exit")
         }
+
+        vlAdapter = VisitsListAdapter()
+        vlAdapter.setVisits()
+        vlRecycView.adapter = vlAdapter
     }
 
     override fun onDetach() {
