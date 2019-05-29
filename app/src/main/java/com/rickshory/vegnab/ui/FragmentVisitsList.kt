@@ -51,7 +51,6 @@ class FragmentVisitsList : Fragment() {
 //            visit = it.getString(ARG_VISIT)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
-        val adpt = VisitsListAdapter()
 
         vnRoomViewModel = activity?.let {
             ViewModelProviders.of(this).get(VNRoomViewModel::class.java)
@@ -59,8 +58,8 @@ class FragmentVisitsList : Fragment() {
 
         vnRoomViewModel.allVis.observe(this, Observer {visits_list ->
             // update the cached copy of visits in the adapter
-            visits_list?.let{{adpt.setVisits(it)}
-                .also{Log.d(TAG, "Visit items in DB ${adpt.itemCount}")} }
+            visits_list?.let{{vlAdapter.setVisits(it)}
+                .also{Log.d(TAG, "Visit items in DB ${vlAdapter.itemCount}")} }
         }) //left?.let { node -> queue.add(node) }
     }
 
@@ -119,7 +118,7 @@ class FragmentVisitsList : Fragment() {
         }
 
         vlAdapter = VisitsListAdapter()
-        vlAdapter.setVisits()
+//        vlAdapter.setVisits()
         vlRecycView.adapter = vlAdapter
     }
 
